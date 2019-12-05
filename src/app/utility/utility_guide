@@ -1,0 +1,18 @@
+1. create ts utility
+
+note: use alias import when using utility
+
+2. you can edit aliases import in tsconfig.json under
+    
+    ...
+    "paths": {
+      "@app/*": ["app/*"],
+      "@env/*": ["environments/*"],
+      "@core/*": ["app/core/*"],
+      "@shared/*": ["app/shared/*"],
+      "@utility/*": ["app/utility/*"],
+      "@assets/*": ["assets/*"],
+    }
+
+3. sample
+    "import { someUtility } from "@utility/someUtility;"
