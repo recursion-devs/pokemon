@@ -732,9 +732,8 @@ export const POKEDEX:Pokemon[] =
       "name": "Ninetales",
       "type": {
         "standard": [
-          "fire",
-          "ice",
-          "fairy"
+          "fire"
+          
         ],
         "alternate": []
       }
@@ -4379,9 +4378,5 @@ export const POKEDEX:Pokemon[] =
       }
     }
   ]
-<<<<<<< HEAD
-}
-=======
 
 
->>>>>>> 57d652e82a7993599709e734eeac88a5c96b3a5f

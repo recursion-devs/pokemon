@@ -7,7 +7,7 @@
                 <div class="col-9 pokiName">
                         <p class="pname">{{pokemon.id}} <span><strong>{{pokemon.name}}</strong></span></p>
                         <div class="row">
-                              <div class="col pokiType" *ngFor="let type of pokemon.type">
+                              <div class="col pokiType" *ngFor="let type of pokemon.type['standard']">
                                         <p>{{type}}</p>
                               </div>  
                         </div>
