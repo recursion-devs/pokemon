@@ -1,1 +1,15 @@
-<p>pokedex works!</p>
+<div class="container">
+ 
+    <ul>
+        <li *ngFor="let pokemon of pokedex;index as i">
+            <p>{{pokemon.id}} <span><strong>{{pokemon.name}}</strong></span><img src={{image[i]}} alt={{pokemon.name}} height="80" width="80"></p>
+            
+            <ul>
+            <li *ngFor="let type of pokemon.type"> 
+                <p>{{type}}</p>
+            </li>
+        </ul>
+        </li>
+    </ul>
+
+</div>

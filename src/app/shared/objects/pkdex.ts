@@ -1,6 +1,6 @@
-
-const POKEDEX = {
-  "pokemons": [
+import {Pokemon} from '@shared/objects/pokemon'
+export const POKEDEX:Pokemon[] = 
+  [
     {
       "id": "#001",
       "name": "Grookey",
@@ -4379,4 +4379,9 @@ const POKEDEX = {
       }
     }
   ]
+<<<<<<< HEAD
 }
+=======
+
+
+>>>>>>> 57d652e82a7993599709e734eeac88a5c96b3a5f
