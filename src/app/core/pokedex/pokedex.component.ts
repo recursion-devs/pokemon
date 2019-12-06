@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {POKEDEX} from '@shared/objects/pkdex'
 
+
 @Component({
   selector: 'app-pokedex',
   templateUrl: './pokedex.component.html',
@@ -26,8 +27,14 @@ export class PokedexComponent implements OnInit {
       console.log(img)
       this.image.push(img)
     }
-    
-  }
   
+  }
+
+changeHeading(){
+  document.getElementById('type').style.background='yellow';
+  console.log('Yellow')
+}
 
 }
+
+

@@ -1,14 +1,25 @@
-<div class="container">
+<div style="overflow:hidden;" >
  
     <ul>
-        <li *ngFor="let pokemon of pokedex;index as i">
-            <p>{{pokemon.id}} <span><strong>{{pokemon.name}}</strong></span><img src={{image[i]}} alt={{pokemon.name}} height="80" width="80"></p>
+
+            <li class="pokiList" *ngFor="let pokemon of pokedex;index as i">
+            <div class="row" >
+                <div class="col-9 pokiName">
+                        <p class="pname">{{pokemon.id}} <span><strong>{{pokemon.name}}</strong></span></p>
+                        <div class="row">
+                              <div class="col pokiType" *ngFor="let type of pokemon.type">
+                                        <p>{{type}}</p>
+                              </div>  
+                        </div>
+
+                </div>
+                <div class="col-3 pokiImg">
+                    <img src={{image[i]}} alt={{pokemon.name}} height="85" width="80">
+                </div>
+                <br style="clear:both;">
+            </div>
             
-            <ul>
-            <li *ngFor="let type of pokemon.type"> 
-                <p>{{type}}</p>
-            </li>
-        </ul>
+            
         </li>
     </ul>
 

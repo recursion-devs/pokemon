@@ -1,3 +1,47 @@
 li{
     list-style-type: none;
 }
+ul{
+    padding-top: 3px;
+    padding-right: 10px;
+    padding-left:10px
+}
+//List of pokemon
+.pokiList{
+   border: 3px solid black;
+    border-radius: 20px;
+    margin-top: 10px;
+    overflow: hidden;
+
+}
+.pokiName{
+    padding-left: 30px;
+}
+.pname{
+    margin-top: 10px;
+    margin-bottom:5px;
+}
+.pokiType{
+    text-align: center;
+    border: 3px solid black;
+    margin:5px 5px;
+    border-radius: 20px;
+}
+
+.pokiType p{
+    margin-bottom: 0;
+}
+
+
+
+//Image of pokemon
+.pokiImg{
+   float:right;
+   border-left: 3px solid black;
+  
+   padding-left:10px;
+
+}
+.pokiImg img{
+    float:right; 
+}
