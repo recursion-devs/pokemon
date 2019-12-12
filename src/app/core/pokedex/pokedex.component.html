@@ -3,9 +3,12 @@
     <ul>
 
             <li class="pokiList" *ngFor="let pokemon of pokedex;index as i">
-            <div class="row" >
-                <div class="col-9 pokiName">
-                        <p class="pname">{{pokemon.id}} <span><strong>{{pokemon.name}}</strong></span></p>
+            <div *ngIf="pokemon.type['standard'].includes('grass'); else fireBlock" class="row" style="background-color:rgb(10, 228, 173, 0.5)" >
+                
+
+
+                <div   class="col-9 pokiName" >
+                        <p class="pname" >{{pokemon.id}} <span><strong>{{pokemon.name}}</strong></span></p>
                         <div class="row">
                               <div class="col pokiType" *ngFor="let type of pokemon.type['standard']">
                                         <p>{{type}}</p>
@@ -13,11 +16,56 @@
                         </div>
 
                 </div>
-                <div class="col-3 pokiImg">
-                    <img src={{image[i]}} alt={{pokemon.name}} height="85" width="80">
-                </div>
-                <br style="clear:both;">
+
+                <div class="col-3 pokiImg" style="background-color:rgba(10, 228, 173)">
+                        <img src={{image[i]}} alt={{pokemon.name}} height="85" width="80">
+                    </div>
+                    <br style="clear:both;">
+
             </div>
+               
+               
+                <ng-template #fireBlock>
+                    <div  *ngIf="pokemon.type['standard'].includes('fire'); else waterBlock" style="background-color: rgb(255, 60, 0, 0.5);" class="row">
+                        <div  class="col-9 pokiName" >
+                                <p class="pname" >{{pokemon.id}} <span><strong>{{pokemon.name}}</strong></span></p>
+                                <div class="row">
+                                      <div class="col pokiType" *ngFor="let type of pokemon.type['standard']">
+                                                <p>{{type}}</p>
+                                      </div>  
+                                </div>
+        
+                        </div>
+                        <div class="col-3 pokiImg" style="background-color: rgb(255, 60, 0);">
+                                <img src={{image[i]}} alt={{pokemon.name}} height="85" width="80">
+                            </div>
+                            <br style="clear:both;">
+                        </div>
+
+                        
+                </ng-template>
+                <ng-template #waterBlock>
+                    <div  style="background-color:rgb(114, 214, 218, 0.5);"  class="row">
+                        <div class="col-9 pokiName" >
+                                <p class="pname" >{{pokemon.id}} <span><strong>{{pokemon.name}}</strong></span></p>
+                                <div class="row">
+                                      <div class="col pokiType" *ngFor="let type of pokemon.type['standard']">
+                                                <p>{{type}}</p>
+                                      </div>  
+                                </div>
+        
+                        </div>
+
+                        <div class="col-3 pokiImg" style="background-color:rgb(114, 214, 218);">
+                                <img src={{image[i]}} alt={{pokemon.name}} height="85" width="80">
+                            </div>
+                            <br style="clear:both;">
+                        </div>
+                        
+                </ng-template>
+
+                
+           
             
             
         </li>

@@ -11,6 +11,7 @@ export class PokedexComponent implements OnInit {
   pokedex=POKEDEX
   image:string[]=[]
   index=0
+  data
   
   constructor() { }
 
@@ -27,12 +28,18 @@ export class PokedexComponent implements OnInit {
       console.log(img)
       this.image.push(img)
     }
-  
+  this.color()
   }
+
+  
 
 changeHeading(){
   document.getElementById('type').style.background='yellow';
   console.log('Yellow')
+}
+color(){
+  console.log(this.data)
+  //document.getElementById('pokiName').style.backgroundColor="red"
 }
 
 }
