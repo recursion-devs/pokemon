@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {POKEDEX} from '@shared/objects/pkdex'
+import {ApiService} from '@shared/services/api.service'
 
 
 @Component({
@@ -12,8 +13,10 @@ export class PokedexComponent implements OnInit {
   image:string[]=[]
   index=0
   data
+  str="https://32wwqvjn96.execute-api.ap-southeast-1.amazonaws.com/dev/pkdex/pkmon/"
   
-  constructor() { }
+  
+  constructor(private api:ApiService) { }
 
   ngOnInit() {
     console.log(this.pokedex)
@@ -28,7 +31,7 @@ export class PokedexComponent implements OnInit {
       console.log(img)
       this.image.push(img)
     }
-  this.color()
+ 
   }
 
   
@@ -37,10 +40,18 @@ changeHeading(){
   document.getElementById('type').style.background='yellow';
   console.log('Yellow')
 }
-color(){
-  console.log(this.data)
-  //document.getElementById('pokiName').style.backgroundColor="red"
+
+
+
+async getPokemonData(id){
+  var pokemonID
+  var pokemonData
+  pokemonID=id.replace(/#/g,"")
+  pokemonData= await this.api.getPokemonData(this.str,pokemonID).toPromise()
+  console.log(pokemonData)
+  
 }
+
 
 }
 
