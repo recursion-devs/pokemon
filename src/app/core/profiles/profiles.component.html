@@ -1,10 +1,16 @@
-<div class="row">
-    <div class="col">
-        header
+<div class="row" *ngIf="data; else hello">
+    <div class="col" style="text-align: center; padding-top: 30px;">
+
+    <img src="{{id}}" height="100" width="100" alt="{{data['name']}}">
+    <h2>{{data['name']}}</h2>
+        <img>
     </div>
 
     <div class="w-100"> </div>
     <div class="col">
-        body
+        
     </div>
 </div>
+<ng-template #hello>
+    <div>No data</div>
+</ng-template>

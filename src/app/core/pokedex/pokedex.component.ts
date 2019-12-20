@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {POKEDEX} from '@shared/objects/pkdex'
 import {ApiService} from '@shared/services/api.service'
+import { RouterModule, Routes,Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class PokedexComponent implements OnInit {
   str="https://32wwqvjn96.execute-api.ap-southeast-1.amazonaws.com/dev/pkdex/pkmon/"
   
   
-  constructor(private api:ApiService) { }
+  constructor(private api:ApiService, private router:Router) { }
 
   ngOnInit() {
     console.log(this.pokedex)
@@ -49,6 +50,9 @@ async getPokemonData(id){
   pokemonID=id.replace(/#/g,"")
   pokemonData= await this.api.getPokemonData(this.str,pokemonID).toPromise()
   console.log(pokemonData)
+  this.router.navigateByUrl('/profile')
+  
+  
   
 }
 
