@@ -3,7 +3,31 @@
 
     <img src="{{id}}" height="100" width="100" alt="{{data['name']}}">
     <h2>{{data['name']}}</h2>
-        <img>
+    <div class="col-12" style="text-align: center;">
+        <h4>{{data['class']}}</h4>
+    </div>
+
+    <div class="col-12">
+        <ul style="text-align: center;">
+            <li *ngFor="let pokemon of data['evolutionChain'].chain" style="display: inline;">
+                {{pokemon}}
+            </li>
+        </ul>
+    </div>
+
+    <div class="row rowTab">
+        <div class="col-7 colTab" style="padding:5px 5px; margin-left: 20px;">
+            <h4>Information</h4>
+
+        </div>  
+        <div class="col-1" style="padding:5px;">
+            &nbsp;
+        </div>
+        <div class="col-4 colTab" style="padding: 5px 5px; margin-left: -38px;">
+            <h4>Stats</h4>
+            <p><strong>HP: </strong>{{data['baseStats']['HP']}}</p>
+        </div>
+    </div>
     </div>
 
     <div class="w-100"> </div>
@@ -11,6 +35,13 @@
         
     </div>
 </div>
+
+
 <ng-template #hello>
-    <div>No data</div>
+    <div class="row">
+        <div class="col" style="text-align: center; padding-top: 30px;">
+            <h2>No current data</h2>
+            <button><a href="/pokedex">Go Back</a></button>
+        </div>
+    </div>
 </ng-template>
