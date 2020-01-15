@@ -20,7 +20,16 @@ export class PokedexComponent implements OnInit {
   constructor(private api:ApiService, private router:Router) { }
 
   ngOnInit() {
+    let strpokedex=''
     console.log(this.pokedex)
+    strpokedex=JSON.stringify(this.pokedex)
+    localStorage.setItem("pokedex",strpokedex)
+    if(localStorage.getItem('pokedex')){
+      console.log('hello')
+    }
+    else{
+      console.log('Error')
+    }
     for (const name  in this.pokedex) {
       let img:string
       let holder:string
