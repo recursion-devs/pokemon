@@ -1,0 +1,16 @@
+button {
+    background-color: $color-2;
+    color: $color-1;
+    font-family: $font-fam-1;
+
+    width: 100%;
+    border: none;
+    border-radius: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.sub-button{
+    background-color: $color-3;
+    color: $color-2;
+}
