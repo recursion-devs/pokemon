@@ -4,17 +4,21 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
+    <div class="container">
+      <div class="row">
+
+        <div class="col d-flex align-items-center justify-content-center height-vh-10">
+            <img class="icon font-1-3x align-div-mid " src="assets/pictures/icon/logo.png" alt="">
+          
+            <span class="pl-2 font-1-5x">
+              DexTre
+            </span>
+        </div>
+      </div>
+    </div>
+
 
     <div class="text-center">
-      <div class="height-vh-5">
-          <img class="icon font-1-3x align-div-mid " src="assets/pictures/icon/logo.png" alt="">
-          <span class="font-1-5x">
-            DexTre
-          </span>
-      </div>
-      
-
-      <br>
       <a [routerLink]="['/home']" >Home</a>
       <br>
       <a [routerLink]="['/pokedex']" >Pokedex</a>
