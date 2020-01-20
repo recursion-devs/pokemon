@@ -2,6 +2,17 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
+@import 'assets/css/__library.scss';
+@import 'assets/css/_animations.scss';
+@import 'assets/css/_font-import.scss';
+@import 'assets/css/alignment.scss';
+@import 'assets/css/buttons.scss';
+@import 'assets/css/divs.scss';
+@import 'assets/css/fonts.scss';
+@import 'assets/css/input.scss';
+@import 'assets/css/positioning.scss';
+@import 'assets/css/sizing.scss';
+@import 'assets/css/util.scss';
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -28,5 +39,5 @@ $framework-theme: mat-light-theme($framework-primary, $framework-accent, $framew
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { height: 100%; font-size: $font-size; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
