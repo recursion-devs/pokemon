@@ -1,11 +1,26 @@
 .background {
-    background-color: $color-1;
-    color: $color-2;
+    background-color: $color-3 !important;
+    color: $color-white !important;
 }
+
+.logo-background {
+    background-color: $color-5 !important;
+    color: $color-white !important;
+    border-right: solid 1px $color-5 !important;
+}
+
+// // removes border in mat
+// .mat-drawer-side {
+//     border-right: solid 1px $color-5;
+// }
+
+::ng-deep .mat-drawer-side {
+    border-right: none;
+} 
 
 .header {
     background-color: $color-4;
-    font-family: $font-fam-1;
+    font-family: $font-fam-bold;
     color: $color-2;
     height: 10%;
     z-index: 1;
@@ -15,7 +30,7 @@
 
 .footer {
     background-color: $color-1;
-    font-family: $font-fam-1;
+    font-family: $font-fam-bold;
     color: $color-2;
     height: 5%;
     z-index: 1;

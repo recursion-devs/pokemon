@@ -1,33 +1,42 @@
 <mat-sidenav-container class="sidenav-container">
 
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
+  <mat-sidenav #drawer class="sidenav background" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <div class="container">
-      <div class="row">
 
-        <div class="col d-flex align-items-center justify-content-center height-vh-10">
-            <img class="icon font-1-3x align-div-mid " src="assets/pictures/icon/logo.png" alt="">
-          
-            <span class="pl-2 font-1-5x">
-              DexTre
+        <mat-toolbar class="logo-background">
+          <img class="icon center-inherit-content" src="assets/pictures/icon/pokeball.svg" alt="">
+          <span class="pl-2 logo-font">
+            DexTre
+          </span>
+        </mat-toolbar>
+    <div class="container">
+      <div class="row padding-10 nav-hover">
+        <div class="col center-left-col">
+            <img class="icon ml-4 center-inherit-content" src="assets/pictures/icon/pikachu-2.svg" alt="">
+            <span class="pl-2 nav-font" [routerLink]="['/home']" > 
+              Credits
             </span>
         </div>
       </div>
+
+      <div class="row padding-10 nav-hover">
+        <div class="col center-left-col">
+            <img class="icon ml-4 center-inherit-content" src="assets/pictures/icon/pokedex.svg" alt="">
+            <span class="pl-2 nav-font" [routerLink]="['/pokedex']" >
+              Pokedex
+            </span>
+        </div>
+      </div>
+
     </div>
 
-
-    <div class="text-center">
-      <a [routerLink]="['/home']" >Home</a>
-      <br>
-      <a [routerLink]="['/pokedex']" >Pokedex</a>
-    </div>
   </mat-sidenav>
 
   <!-- CONTENT -->
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar class="logo-background">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -38,7 +47,9 @@
       </button>
       <span>{{name}}</span>
     </mat-toolbar>
-   <router-outlet></router-outlet>
+   <router-outlet class="background"></router-outlet>
+
+  
   </mat-sidenav-content>
 
 </mat-sidenav-container>

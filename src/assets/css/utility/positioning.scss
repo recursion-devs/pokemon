@@ -1,3 +1,50 @@
+// row -> col -> content
+
+
+// COL
+// vertical-horizontal-(col/row)
+.center-center-col {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.center-left-col {
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+}
+
+.center-right-col {
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+}
+
+// CONTENTS ==============================
+// IMAGES
+.center-inherit-content {
+    vertical-align: middle;
+}
+
+// TEXT
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-justify {
+    text-align: justify;
+}
+
+// ADJUSTMENTS/ALIGNMENTS UTILITY
 .m-l--125 {
 margin-left: -125px; }
 
