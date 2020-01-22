@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {POKEDEX} from '@shared/objects/pkdex'
-import {ApiService} from '@shared/services/api.service'
+import { POKEDEX } from '@shared/objects/pkdex'
+import { ApiService } from '@shared/services/api.service'
 import { RouterModule, Routes,Router } from '@angular/router';
 
 
@@ -15,36 +15,18 @@ export class PokedexComponent implements OnInit {
   index=0
   data
   str="https://32wwqvjn96.execute-api.ap-southeast-1.amazonaws.com/dev/pkdex/pkmon/"
-  
-  
+
   constructor(private api:ApiService, private router:Router) { }
 
   ngOnInit() {
-    let strpokedex=''
-    console.log(this.pokedex)
-    strpokedex=JSON.stringify(this.pokedex)
-    localStorage.setItem("pokedex",strpokedex)
-    if(localStorage.getItem('pokedex')){
-      console.log('hello')
-    }
-    else{
-      console.log('Error')
-    }
-    for (const name  in this.pokedex) {
-      let img:string
-      let holder:string
-      if (this.pokedex.hasOwnProperty(name)) {
-        
-        holder=this.pokedex[name].id.toString().replace(/#/g,"");
-        img="https://galardex.s3-ap-southeast-1.amazonaws.com/pkimage/"+holder+".png"
-      }
-      console.log(img)
-      this.image.push(img)
-    }
- 
-  }
+    this.pokedex.forEach(pokemon => {
+      let pokemonId = pokemon.id.replace(/#/g,"")
+      let imgLink ="https://galardex.s3-ap-southeast-1.amazonaws.com/pkimage/"+pokemonId+".png"
 
-  
+      pokemon["img_link"] = imgLink
+    });
+
+  }
 
 changeHeading(){
   document.getElementById('type').style.background='yellow';
@@ -60,9 +42,6 @@ async getPokemonData(id){
   pokemonData= await this.api.getPokemonData(this.str,pokemonID).toPromise()
   console.log(pokemonData)
   this.router.navigateByUrl('/profile')
-  
-  
-  
 }
 
 

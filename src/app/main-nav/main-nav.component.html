@@ -1,20 +1,24 @@
 <mat-sidenav-container class="sidenav-container">
 
-  <mat-sidenav #drawer class="sidenav background" fixedInViewport
+  <mat-sidenav #drawer class="sidenav background-1" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
 
-        <mat-toolbar class="logo-background">
-          <img class="icon center-inherit-content" src="assets/pictures/icon/pokeball.svg" alt="">
-          <span class="pl-2 logo-font">
-            DexTre
-          </span>
-        </mat-toolbar>
     <div class="container">
+
+      <div class="row padding-10 height-vh-20">
+        <div class="col center-center-col">
+            <img class="icon center-inherit-content" src="assets/pictures/icon/pokeball.svg" alt="">
+            <span class="pl-2 logo-font">
+              DexTre
+            </span>
+        </div>
+      </div>
+
       <div class="row padding-10 nav-hover">
         <div class="col center-left-col">
-            <img class="icon ml-4 center-inherit-content" src="assets/pictures/icon/pikachu-2.svg" alt="">
+            <img class="icon ml-3 center-inherit-content" src="assets/pictures/icon/pikachu-2.svg" alt="">
             <span class="pl-2 nav-font" [routerLink]="['/home']" > 
               Credits
             </span>
@@ -23,7 +27,7 @@
 
       <div class="row padding-10 nav-hover">
         <div class="col center-left-col">
-            <img class="icon ml-4 center-inherit-content" src="assets/pictures/icon/pokedex.svg" alt="">
+            <img class="icon ml-3 center-inherit-content" src="assets/pictures/icon/pokedex.svg" alt="">
             <span class="pl-2 nav-font" [routerLink]="['/pokedex']" >
               Pokedex
             </span>
@@ -36,7 +40,8 @@
 
   <!-- CONTENT -->
   <mat-sidenav-content>
-    <mat-toolbar class="logo-background">
+    <mat-toolbar class="background-2">
+
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -45,11 +50,11 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>{{name}}</span>
-    </mat-toolbar>
-   <router-outlet class="background"></router-outlet>
 
-  
+      <span class="title-medium">{{name}}</span>
+
+    </mat-toolbar>
+    <router-outlet class="background"></router-outlet>
   </mat-sidenav-content>
 
 </mat-sidenav-container>

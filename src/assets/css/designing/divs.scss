@@ -1,22 +1,24 @@
-.background {
-    background-color: $color-3 !important;
+.background-1 {
+    background-color: $color-1 !important;
     color: $color-white !important;
 }
 
-.logo-background {
-    background-color: $color-5 !important;
+.background-2 {
+    background-color: $color-2 !important;
     color: $color-white !important;
-    border-right: solid 1px $color-5 !important;
 }
 
-// // removes border in mat
-// .mat-drawer-side {
-//     border-right: solid 1px $color-5;
-// }
+.background-3 {
+    background-color: $color-white !important;
+    color: $color-black !important;
+}
 
-::ng-deep .mat-drawer-side {
-    border-right: none;
-} 
+.pokedex-panel{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 .header {
     background-color: $color-4;

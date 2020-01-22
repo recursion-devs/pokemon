@@ -1,3 +1,9 @@
 .nav-hover:hover{
-    background-color: $color-4;
+    background-color: $color-2;
+    cursor: pointer;
+}
+
+.nav-hover::selection{
+    background-color: $color-2;
+    cursor: pointer;
 }
