@@ -26,6 +26,7 @@ export class PokedexComponent implements OnInit {
       pokemon["img_link"] = imgLink
     });
 
+    console.log(this.pokedex)
   }
 
 changeHeading(){

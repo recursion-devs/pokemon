@@ -1,21 +1,377 @@
-.pokedex-content{
+.normal{
     border-radius: 10px;
     background-color: $color-normal-dark2;
+
+    .content {
+        background-color: $color-normal-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-normal-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
 }
 
-.normal-content {
-    background-color: $color-normal-dark2;
-    color: $color-white;
-    height: 100px;
+.grass{
     border-radius: 10px;
+    background-color: $color-grass-dark2;
+
+    .content {
+        background-color: $color-grass-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-grass-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
 }
 
-.normal-img {
-    background-color: $color-normal-light2;
-    color: $color-white;
-    height: 100px;
-    border-radius: 5px;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    
+.fire{
+    border-radius: 10px;
+    background-color: $color-fire-dark2;
+
+    .content {
+        background-color: $color-fire-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-fire-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+}
+
+.water{
+    border-radius: 10px;
+    background-color: $color-water-dark2;
+
+    .content {
+        background-color: $color-water-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-water-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+}
+
+.fighting{
+    border-radius: 10px;
+    background-color: $color-fighting-dark2;
+
+    .content {
+        background-color: $color-fighting-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-fighting-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+}
+
+.flying{
+    border-radius: 10px;
+    background-color: $color-flying-dark2;
+
+    .content {
+        background-color: $color-flying-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-flying-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+}
+
+.poison{
+    border-radius: 10px;
+    background-color: $color-poison-dark2;
+
+    .content {
+        background-color: $color-poison-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-poison-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+}
+
+.ground{
+    border-radius: 10px;
+    background-color: $color-ground-dark2;
+
+    .content {
+        background-color: $color-ground-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-ground-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+}
+
+.rock{
+    border-radius: 10px;
+    background-color: $color-rock-dark2;
+
+    .content {
+        background-color: $color-rock-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-rock-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+}
+
+.bug{
+    border-radius: 10px;
+    background-color: $color-bug-dark2;
+
+    .content {
+        background-color: $color-bug-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-bug-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+}
+
+.ghost{
+    border-radius: 10px;
+    background-color: $color-ghost-dark2;
+
+    .content {
+        background-color: $color-ghost-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-ghost-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+}
+
+.electric{
+    border-radius: 10px;
+    background-color: $color-electric-dark2;
+
+    .content {
+        background-color: $color-electric-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-electric-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+}
+
+.psychic{
+    border-radius: 10px;
+    background-color: $color-psychic-dark2;
+
+    .content {
+        background-color: $color-psychic-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-psychic-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+}
+
+.ice{
+    border-radius: 10px;
+    background-color: $color-ice-dark2;
+
+    .content {
+        background-color: $color-ice-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-ice-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+}
+
+.dragon{
+    border-radius: 10px;
+    background-color: $color-dragon-dark2;
+
+    .content {
+        background-color: $color-dragon-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-dragon-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+}
+
+.dark{
+    border-radius: 10px;
+    background-color: $color-dark-dark2;
+
+    .content {
+        background-color: $color-dark-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-dark-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+}
+
+.steel{
+    border-radius: 10px;
+    background-color: $color-steel-dark2;
+
+    .content {
+        background-color: $color-steel-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-steel-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+}
+
+.fairy{
+    border-radius: 10px;
+    background-color: $color-fairy-dark2;
+
+    .content {
+        background-color: $color-fairy-dark2;
+        color: $color-white;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .img {
+        background-color: $color-fairy-light;
+        color: $color-white;
+        height: 100px;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
 }

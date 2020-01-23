@@ -1,20 +1,23 @@
 <div class="container">
 	<ng-container *ngFor="let pokemon of pokedex">
 			<div class="row pokedex-panel">
-					<div class="col pokedex-content">
 
+
+					<div class="col {{pokemon.type.standard[0]}}">
 						<div class="row">
-								<div class="col-9 normal-content">
+								<div class="col-9 content center-center-col">
+
+										
 										{{pokemon.id}}
 										<br>
 										{{pokemon.name}}
 									</div>
-									<div class="col-3 normal-img center-center-col">
+									<div class="col-3 img center-center-col">
 										<img src={{pokemon.img_link}} alt={{pokemon.name}} height="80" width="80">
 									</div>
 						</div>
-
 					</div>
+
 			</div>
 	</ng-container>
 </div>
