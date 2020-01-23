@@ -5,12 +5,50 @@
 
 					<div class="col {{pokemon.type.standard[0]}}">
 						<div class="row">
-								<div class="col-9 content center-center-col">
+								<div class="col-9 content">
 
-										
-										{{pokemon.id}}
-										<br>
-										{{pokemon.name}}
+										<div class="row height-per-20 pt-2">
+											<div class="col-4 top-center-col h-fit">
+												{{pokemon.id}} {{pokemon.name}}
+											</div>
+											<div class="col-8 h-fit">
+												<div class="row">
+													<ng-container *ngIf="pokemon.type.standard[1]; else oneType">
+														<div class="col-6">
+															<div class="{{pokemon.type.standard[0]}}-panel center-center-col">
+																{{pokemon.type.standard[0] | uppercase}}
+															</div>
+														</div>
+
+														<div class="col-6">
+															<div class="{{pokemon.type.standard[1]}}-panel center-center-col">
+																{{pokemon.type.standard[1] | uppercase}}
+															</div>
+														</div>
+													</ng-container>
+
+													<ng-template #oneType>
+														<div class="col-12">
+															<div class="{{pokemon.type.standard[0]}}-panel center-center-col">
+																{{pokemon.type.standard[0] | uppercase}}
+															</div>
+														</div>
+													</ng-template>
+												</div>
+											</div>
+										</div>
+
+										<div class="row height-per-80 pt-2">
+
+											<div class="col-3 mb-2 top-center-col strong-panel">
+												Strong to
+											</div>
+
+											<div class="col-3 mb-2 bottom-left-col">
+												zxc
+											</div>
+										</div>
+
 									</div>
 									<div class="col-3 img center-center-col">
 										<img src={{pokemon.img_link}} alt={{pokemon.name}} height="80" width="80">

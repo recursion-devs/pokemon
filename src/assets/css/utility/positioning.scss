@@ -21,6 +21,42 @@
     display: flex;
 }
 
+.top-center-col {
+    align-items: flex-start;
+    justify-content: center;
+    display: flex;
+}
+
+.top-left-col {
+    align-items: flex-start;
+    justify-content: flex-start;
+    display: flex;
+}
+
+.top-right-col {
+    align-items: flex-start;
+    justify-content: flex-end;
+    display: flex;
+}
+
+.bottom-center-col {
+    align-items: flex-end;
+    justify-content: center;
+    display: flex;
+}
+
+.bottom-left-col {
+    align-items: flex-end;
+    justify-content: flex-start;
+    display: flex;
+}
+
+.bottom-right-col {
+    align-items: flex-end;
+    justify-content: flex-end;
+    display: flex;
+}
+
 // CONTENTS ==============================
 // IMAGES
 .center-inherit-content {
