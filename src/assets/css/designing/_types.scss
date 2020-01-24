@@ -1,17 +1,16 @@
 .normal{
     border-radius: 10px;
     background-color: $color-normal-dark2;
+    color: $color-white;
 
     .content {
         background-color: $color-normal-dark2;
-        color: $color-white;
         height: 100px;
         border-radius: 10px;
     }
 
     .img {
         background-color: $color-normal-light;
-        color: $color-white;
         height: 100px;
         border-radius: 5px;
         border-top-left-radius: 50px;
@@ -377,193 +376,115 @@
 }
 
 // pokemon Type Logo Panel
-.normal-panel {
+.panel {
+    color: $color-white;
+    width: 100%;
+    padding: 0.1em;
+    border: solid 1px $color-white;
+    // text-shadow: 0 0 3px $color-black, 0 0 5px $color-black;
+    letter-spacing: 1px;
+    font-size: 0.7em;
+    font-weight: bold;
+    font-family: $font-fam-ebold;
+    border-radius: 0.5em;
+}
+
+.panel-2 {
+    color: $color-white;
+    width: 100%;
+    padding: 0.1em;
+    border: dotted 1px $color-white;
+    letter-spacing: 1px;
+    font-size: 0.7em;
+    font-weight: bold;
+    border-radius: 0.5em;
+}
+
+.poke-name {
+    text-shadow: 0 0 3px $color-black, 0 0 5px $color-black;
+    font-family: $font-fam-ebold;
+}
+
+.offense {
+    background-color: $color-water-light;
+}
+
+.defense {
+    background-color: $color-fighting-light;
+}
+
+.normal-base {
     background-color: $color-normal-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
-.grass-panel {
+.grass-base {
     background-color: $color-grass-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
-.fire-panel {
+.fire-base {
     background-color: $color-fire-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
-
-.water-panel {
+.water-base {
     background-color: $color-water-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
-.fighting-panel {
+.fighting-base {
     background-color: $color-fighting-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
-.flying-panel {
+.flying-base {
     background-color: $color-flying-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
-.poison-panel {
+.poison-base {
     background-color: $color-poison-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
-.ground-panel {
+.ground-base {
     background-color: $color-ground-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
-.rock-panel {
+.rock-base {
     background-color: $color-rock-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
-.bug-panel {
+.bug-base {
     background-color: $color-bug-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
-.ghost-panel {
+.ghost-base {
     background-color: $color-ghost-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
-.electric-panel {
+.electric-base {
     background-color: $color-electric-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
-.psychic-panel {
+.psychic-base {
     background-color: $color-psychic-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
-.ice-panel {
+.ice-base {
     background-color: $color-ice-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
-.dragon-panel {
+.dragon-base {
     background-color: $color-dragon-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
-.dark-panel {
+.dark-base {
     background-color: $color-dark-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
-.steel-panel {
-    background-color: $color-steel-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
+.steel-base {
+    background-color: $color-steel-base;;
 }
 
-.fairy-panel {
+.fairy-base {
     background-color: $color-fairy-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
-.strong-panel {
+.strong-base {
     background-color: $color-fairy-base;
-    color: $color-white;
-    width: 100%;
-    padding: 0.1em; border: solid 1px $color-white;
-    font-size: 0.7em;
-    font-weight: bold;
-    border-radius: 0.5em;
 }

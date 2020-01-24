@@ -7,49 +7,56 @@
 						<div class="row">
 								<div class="col-9 content">
 
-										<div class="row height-per-20 pt-2">
-											<div class="col-4 top-center-col h-fit">
-												{{pokemon.id}} {{pokemon.name}}
+										<div class="row height-per-50">
+											<div class="col-3 center-center-col">
+												{{pokemon.id}} <br>
+												{{pokemon.name}}
 											</div>
-											<div class="col-8 h-fit">
-												<div class="row">
+
+											<div class="col-9 center-center-col">
+												<div class="row height-per-50">
 													<ng-container *ngIf="pokemon.type.standard[1]; else oneType">
 														<div class="col-6">
-															<div class="{{pokemon.type.standard[0]}}-panel center-center-col">
+															<div class="panel {{pokemon.type.standard[0]}}-base center-center-col">
 																{{pokemon.type.standard[0] | uppercase}}
 															</div>
 														</div>
 
 														<div class="col-6">
-															<div class="{{pokemon.type.standard[1]}}-panel center-center-col">
+															<div class="panel {{pokemon.type.standard[1]}}-base center-center-col">
 																{{pokemon.type.standard[1] | uppercase}}
 															</div>
 														</div>
 													</ng-container>
 
 													<ng-template #oneType>
-														<div class="col-12">
-															<div class="{{pokemon.type.standard[0]}}-panel center-center-col">
-																{{pokemon.type.standard[0] | uppercase}}
+															<div class="col-12  center-center-col">
+																<div class="panel {{pokemon.type.standard[0]}} text-center padding-5">
+																		{{pokemon.type.standard[0] | uppercase}}
+																	</div>
 															</div>
-														</div>
-													</ng-template>
+														</ng-template>
 												</div>
 											</div>
 										</div>
 
-										<div class="row height-per-80 pt-2">
-
-											<div class="col-3 mb-2 top-center-col strong-panel">
-												Strong to
+										<div class="row height-per-50">
+											<div class="col-6 center-center-col">
+												<div class="panel-2 {{pokemon.type.standard[0]}} text-center padding-5">
+													OFFENSE
+												</div>
 											</div>
 
-											<div class="col-3 mb-2 bottom-left-col">
-												zxc
+											<div class="col-6 center-center-col">
+												<div class="panel-2 {{pokemon.type.standard[0]}} text-center padding-5">
+													DEFENDER
+												</div>
 											</div>
+
 										</div>
 
 									</div>
+
 									<div class="col-3 img center-center-col">
 										<img src={{pokemon.img_link}} alt={{pokemon.name}} height="80" width="80">
 									</div>

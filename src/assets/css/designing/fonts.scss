@@ -17,7 +17,7 @@
 }
 
 .logo-font{
-    font-family: $font-fam-logo;
+    font-family: $font-fam-ebold;
     font-size: 2.5em;
 }
 
@@ -27,7 +27,12 @@
 
 // FONT STYLES
 .font-bold {
-font-weight: bold; }
+font-family: $font-fam-ebold;
+}
+
+.font-reg {
+font-family: $font-fam-reg !important;
+}
 
 .font-italic {
 font-style: italic; }
