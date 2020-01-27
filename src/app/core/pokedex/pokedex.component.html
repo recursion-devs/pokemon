@@ -8,21 +8,21 @@
 								<div class="col-9 content">
 
 										<div class="row height-per-50">
-											<div class="col-3 center-center-col">
+											<div class="col-3 center-left-col">
 												{{pokemon.id}} <br>
 												{{pokemon.name}}
 											</div>
 
 											<div class="col-9 center-center-col">
-												<div class="row height-per-50">
+												<div class="row height-per-50 w-100">
 													<ng-container *ngIf="pokemon.type.standard[1]; else oneType">
-														<div class="col-6">
+														<div class="col-6 padding-0 pr-2">
 															<div class="panel {{pokemon.type.standard[0]}}-base center-center-col">
 																{{pokemon.type.standard[0] | uppercase}}
 															</div>
 														</div>
 
-														<div class="col-6">
+														<div class="col-6 padding-0 pr-2">
 															<div class="panel {{pokemon.type.standard[1]}}-base center-center-col">
 																{{pokemon.type.standard[1] | uppercase}}
 															</div>
@@ -30,8 +30,8 @@
 													</ng-container>
 
 													<ng-template #oneType>
-															<div class="col-12  center-center-col">
-																<div class="panel {{pokemon.type.standard[0]}} text-center padding-5">
+															<div class="col-12 padding-0 center-center-col">
+																<div class="panel {{pokemon.type.standard[0]}}-base text-center">
 																		{{pokemon.type.standard[0] | uppercase}}
 																	</div>
 															</div>

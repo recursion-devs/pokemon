@@ -377,23 +377,23 @@
 
 // pokemon Type Logo Panel
 .panel {
-    color: $color-white;
     width: 100%;
     padding: 0.1em;
-    border: solid 1px $color-white;
-    // text-shadow: 0 0 3px $color-black, 0 0 5px $color-black;
+    border-radius: 0.5em;
     letter-spacing: 1px;
     font-size: 0.7em;
     font-weight: bold;
+    // border: inset 2px;
     font-family: $font-fam-ebold;
-    border-radius: 0.5em;
+    background-color: rgba(254, 254, 254, 0.50);
 }
 
 .panel-2 {
     color: $color-white;
     width: 100%;
     padding: 0.1em;
-    border: dotted 1px $color-white;
+    border: dotted 1px;
+    border-color: $color-white;
     letter-spacing: 1px;
     font-size: 0.7em;
     font-weight: bold;
@@ -405,86 +405,110 @@
     font-family: $font-fam-ebold;
 }
 
-.offense {
-    background-color: $color-water-light;
-}
-
-.defense {
-    background-color: $color-fighting-light;
-}
-
 .normal-base {
-    background-color: $color-normal-base;
+    color: $color-normal-dark2;
+    border-color: $color-normal-dark1;
+    // background-color: $color-normal-base;
 }
 
 .grass-base {
-    background-color: $color-grass-base;
+    color: $color-grass-dark2;
+    border-color: $color-grass-dark1;
+    // background-color: $color-grass-base;
 }
 
 .fire-base {
-    background-color: $color-fire-base;
+    color: $color-fire-dark2;
+    border-color: $color-fire-dark1;
+    // background-color: $color-fire-base;
 }
 
 .water-base {
-    background-color: $color-water-base;
+    color: $color-water-dark2;
+    border-color: $color-water-dark1;
+    // background-color: $color-water-base;
 }
 
 .fighting-base {
-    background-color: $color-fighting-base;
+    color: $color-fighting-dark2;
+    border-color: $color-fighting-dark1;
+    // background-color: $color-fighting-base;
 }
 
 .flying-base {
-    background-color: $color-flying-base;
+    color: $color-flying-dark2;
+    border-color: $color-flying-dark1;
+    // background-color: $color-flying-base;
 }
 
 .poison-base {
-    background-color: $color-poison-base;
+    color: $color-poison-dark2;
+    border-color: $color-poison-dark1;
+    // background-color: $color-poison-base;
 }
 
 .ground-base {
-    background-color: $color-ground-base;
+    color: $color-ground-dark2;
+    border-color: $color-ground-dark1;
+    // background-color: $color-ground-base;
 }
 
 .rock-base {
-    background-color: $color-rock-base;
+    color: $color-rock-dark2;
+    border-color: $color-rock-dark1;
+    // background-color: $color-rock-base;
 }
 
 .bug-base {
-    background-color: $color-bug-base;
+    color: $color-bug-dark2;
+    border-color: $color-bug-dark1;
+    // background-color: $color-bug-base;
 }
 
 .ghost-base {
-    background-color: $color-ghost-base;
+    color: $color-ghost-dark2;
+    border-color: $color-ghost-dark1;
+    // background-color: $color-ghost-base;
 }
 
 .electric-base {
-    background-color: $color-electric-base;
+    color: $color-electric-dark2;
+    border-color: $color-electric-dark1;
+    // background-color: $color-electric-base;
 }
 
 .psychic-base {
-    background-color: $color-psychic-base;
+    color: $color-psychic-dark2;
+    border-color: $color-psychic-dark1;
+    // background-color: $color-psychic-base;
 }
 
 .ice-base {
-    background-color: $color-ice-base;
+    color: $color-ice-dark2;
+    border-color: $color-ice-dark1;
+    // background-color: $color-ice-base;
 }
 
 .dragon-base {
-    background-color: $color-dragon-base;
+    color: $color-dragon-dark2;
+    border-color: $color-dragon-dark1;
+    // background-color: $color-dragon-base;
 }
 
 .dark-base {
-    background-color: $color-dark-base;
+    color: $color-dark-dark2;
+    border-color: $color-dark-dark1;
+    // background-color: $color-dark-base;
 }
 
 .steel-base {
-    background-color: $color-steel-base;;
+    color: $color-steel-dark2;
+    border-color: $color-steel-dark1;
+    // background-color: $color-steel-base;;
 }
 
 .fairy-base {
-    background-color: $color-fairy-base;
-}
-
-.strong-base {
-    background-color: $color-fairy-base;
+    color: $color-fairy-dark2;
+    border-color: $color-fairy-dark1;
+    // background-color: $color-fairy-base;
 }
