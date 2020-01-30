@@ -3,3 +3,7 @@ export class Pokemon{
     name:string;
     type:object;
 }
+export class Offense{
+    type:string;
+    class:object
+}

@@ -51,6 +51,7 @@
 											<div class="col-6 center-center-col pointer" (click)="onClickDefender(pokemon)">
 												<div class="panel-2 {{pokemon.type.standard[0]}} text-center padding-5">
 													DEFENDER
+													
 												</div>
 											</div>
 										</div> <!-- lower division end -->
@@ -63,14 +64,27 @@
 									<div class="row"> <!-- upper division -->
 										<div class="col-3 center-left-col">
 											OFFENSE
+											
 										</div>
 									</div>
+									<div class="row">
+										<div class="col-12">
+											Type:{{pokemon.type.standard[0]}}
+										</div>
+									</div>
+									<ng-container *ngIf="pokemon.type.standard[0]; else oneOffense ">
+										<ng-container *ngFor="let item of pokemon.offense_name; let i=index"> 
+											<div>
+												Type: {{item}} Deals: {{pokemon.offense_damage[i]}} damage
+											</div>
+										</ng-container>
+									</ng-container>
 								</div>
 							</ng-container>
 
 							<ng-container *ngIf="pokemon.show_content=='defenderData'">
 								<div class="col-9 content" (click)="onClickReturn(pokemon)">
-									Offense
+									DEFENDER
 								</div>
 							</ng-container>
 
