@@ -156,7 +156,7 @@
         </div>
     </div>
     <div class="col-4 nopadding card">
-        <div class="card-header smallpadding text-center {{data.type.standard[0]}}-card">
+        <div class="card-header smallpadding text-center {{data.type.standard[0]}}-card" style="white-space:nowrap;">
             BASE EGG STEP
         </div>
         <div class="card-body smallpadding text-center {{data.type.standard[0]}}-card-content">
@@ -166,6 +166,51 @@
 </div>
 <div class="row sidepadding" [hidden]="!(show=='bar')">
     <canvas width="600" height="600" #ChartBar (click)="click()">{{ chart_bar }}</canvas>
+</div>
+<div class="row sidepadding">
+    <div class="col-12 nopadding card"> 
+        <div class="card-header smallpadding text-center {{data.type.standard[0]}}-card">
+            BASE STATS
+        </div>
+    </div>
+</div>
+<div class="row sidepadding">
+    <div class="col-2 nopadding card"> 
+        <div class="card-header smallpadding text-center {{data.type.standard[0]}}-card">
+            <p class="{{data.type.standard[0]}}-card">HP</p>
+            <p class="{{data.type.standard[0]}}-card">{{data.baseStats['HP']}}</p>
+        </div>
+    </div>
+    <div class="col-2 nopadding card"> 
+        <div class="card-header smallpadding text-center {{data.type.standard[0]}}-card">
+            <p class="{{data.type.standard[0]}}-card">ATK</p>
+            <p class="{{data.type.standard[0]}}-card">{{data.baseStats['Atk']}}</p>
+        </div>
+    </div>
+    <div class="col-2 nopadding card"> 
+        <div class="card-header smallpadding text-center {{data.type.standard[0]}}-card">
+            <p class="{{data.type.standard[0]}}-card">DEF</p>
+            <p class="{{data.type.standard[0]}}-card">{{data.baseStats['Def']}}</p>
+        </div>
+    </div>
+    <div class="col-2 nopadding card"> 
+        <div class="card-header smallpadding text-center {{data.type.standard[0]}}-card">
+            <p class="{{data.type.standard[0]}}-card">SATK</p>
+            <p class="{{data.type.standard[0]}}-card">{{data.baseStats['SAtk']}}</p>
+        </div>
+    </div>
+    <div class="col-2 nopadding card"> 
+        <div class="card-header smallpadding text-center {{data.type.standard[0]}}-card">
+            <p class="{{data.type.standard[0]}}-card">SDEF</p>
+            <p class="{{data.type.standard[0]}}-card">{{data.baseStats['SDef']}}</p>
+        </div>
+    </div>
+    <div class="col-2 nopadding card"> 
+        <div class="card-header smallpadding text-center  {{data.type.standard[0]}}-card">
+            <p class="{{data.type.standard[0]}}-card">SPD</p>
+            <p class="{{data.type.standard[0]}}-card">{{data.baseStats['Spd']}}</p>
+        </div>
+    </div>
 </div>
 </div>
 
