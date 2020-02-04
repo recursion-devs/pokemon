@@ -13,7 +13,7 @@ const routes: Routes = [
      // <-- DEFAULT FALLBACK
     {path: 'home', component:HomeComponent},
     {path: 'pokedex', component:PokedexComponent},
-    {path: 'profile', component:ProfilesComponent},
+    {path: 'profile/:id', component:ProfilesComponent},
     { path: '**' , redirectTo: 'pokedex'}
   ];
 

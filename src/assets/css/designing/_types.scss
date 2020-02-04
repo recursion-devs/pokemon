@@ -399,6 +399,17 @@
     font-weight: bold;
     border-radius: 0.5em;
 }
+.panel-3{
+    width: 100%;
+    padding: 0.1em;
+    color: $color-white;
+    letter-spacing: 1px;
+    font-size: 2em;
+    font-weight: bold;
+    // border: inset 2px;
+    font-family: $font-fam-ebold;
+    
+}
 
 .poke-name {
     text-shadow: 0 0 3px $color-black, 0 0 5px $color-black;
@@ -512,3 +523,135 @@
     border-color: $color-fairy-dark1;
     // background-color: $color-fairy-base;
 }
+
+// FOR BACKGROUND IN PROFILES
+.grass-background{
+    background-color: $color-grass-base;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+}
+.fire-background{
+    background-color: $color-fire-base;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+}
+.water-background{
+    background-color: $color-water-base;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+}
+.normal-background{
+    background-color: $color-normal-base;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+}
+.fighting-background{
+    background-color: $color-fighting-base;
+    overflow-x:hidden;
+    padding-bottom: 30px;
+
+}
+.flying-background{
+    background-color: $color-flying-base;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+
+}
+.poison-background{
+    background-color: $color-poison-base;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+}
+.ground-background{
+    background-color: $color-ground-base;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+}
+.rock-background{
+    background-color: $color-rock-base;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+}
+.bug-background{
+    background-color: $color-bug-base;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+}
+.ghost-background{
+    background-color: $color-ghost-base;
+    overflow-x:hidden;
+    padding-bottom: 30px;
+
+}
+.electric-background{
+    background-color: $color-electric-base;
+    overflow-x:hidden;
+    padding-bottom: 30px;
+}
+.psychic_background{
+    background-color: $color-psychic-base;
+    overflow-x:hidden;
+    padding-bottom: 30px;
+}
+.ice-background{
+    background-color: $color-ice-base;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+
+}
+.dragon-background{
+    background-color: $color-dragon-base;
+    overflow-x:hidden;
+    padding-bottom: 30px;
+}
+.dark-background{
+    background-color: $color-dark-base;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+
+}
+.steel-background{
+    background-color: $color-steel-base;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+}
+.fairy-background{
+    background-color: $color-fairy-base;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+}
+
+
+
+//Z index property
+
+.upper{
+    z-index: 100;
+}
+.lower{
+    z-index:-100;
+}
+
+//for no padding
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+ }
+
+ .smallpadding {
+     padding:5px !important;
+     margin: 0 !important
+ }
+
+ //card style
+ .grass-card{
+     background-color: $color-grass-dark2;
+     color:$color-white;
+     font-family: $font-fam-ebold;
+ }
+ .grass-card-content{
+    background-color: $color-grass-base;
+    color:$color-white;
+    font-family: $font-fam-reg;
+ }

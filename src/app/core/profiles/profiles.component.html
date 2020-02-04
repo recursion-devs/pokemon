@@ -1,36 +1,89 @@
-<div class="" *ngIf="data; else hello">
-    <div class="col-12" style="text-align: center; padding-top: 30px;width: 400px;">
+<div class="container {{data['type']['standard']['0']}}-background" *ngIf="data; else hello">
+    <div class="row">
+        <div class="col-12 " style="text-align: center; padding-top: 30px;">
+            <img src="{{id}}" height="100" width="100" alt="{{data['name']}}">
+        </div>
 
-    <img src="{{id}}" height="100" width="100" alt="{{data['name']}}">
-    <h2>{{data['name']}}</h2>
-    <div class="col-12" style="text-align: center;">
-        <h4>{{data['class']}}</h4>
     </div>
-
-    <div
-     class="col-12">
-        <ul style="text-align: center;">
-            <li *ngFor="let pokemon of data['evolutionChain'].chain" style="display: inline;">
-                {{pokemon}}
-            </li>
-        </ul>
-    </div
-    >
-
-    <div class="row rowTab" style="padding:10px 10px;">
-        <div class="col-8 colTab" style="padding:5px 5px; margin-right:-1px;">
-            <h4>Information</h4>
-
-        </div>  
-       
-        <div class="col-4 colTab" style="padding: 5px 5px; ">
-            <h4>Stats</h4>
-            <p><strong>HP: </strong>{{data['baseStats']['HP']}}</p>
+    <div class="row">
+        <div class=" panel-3 center-center-col">
+            {{data.name | uppercase}}
         </div>
     </div>
-    
+    <!-- <div class="row">
+        <div class=" col-3">
+            Name            
+        </div>
+        <div class="col-3">
+            No.
+        </div>
+        <div class="col-3">
+            Gender Ratio
+        </div>
+        <div class="col-3">
+            Type 
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col-3">
+            {{data.name}}            
+        </div>
+        <div class="col-3">
+            #{{index}}
+        </div>
+        <div class="col-3">
+            {{data.genderRatio}}
+        </div>
+        <div class="col-3">
+            <div *ngFor="let x of data.type.standard">
+                {{x|uppercase}}
+            </div>
+        </div>
+    </div>
 
-</div>
+    <div class="row">
+        <div class="col-3">
+            Classification
+        </div>
+        <div class="col-2">
+            Height
+        </div>
+        <div class="col-2">
+            Weight
+        </div>
+        <div class="col-2">
+            Catch%
+        </div>
+        <div class="col-3">
+            Egg Step
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+           {{data.class}}
+        </div>
+        <div class="col-2">
+            {{data.height}}
+        </div>
+        <div class="col-2">
+            {{data.weight}}
+        </div>
+        <div class="col-2">
+            {{data.captureRate}}%
+        </div>
+        <div class="col-3">
+            {{data.eggSteps}}
+        </div>
+    </div> -->
+
+    <div class="col-3 nopadding card ">
+        <div class="card-header smallpadding text-center {{data['type']['standard']['0']}}-card ">
+            NAME
+        </div>
+        <div class="card-body {{data['type']['standard']['0']}}-card-content">
+            
+        </div>
+    </div>
 </div>
 
 

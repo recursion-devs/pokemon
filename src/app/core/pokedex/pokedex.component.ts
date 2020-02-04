@@ -17,7 +17,7 @@ export class PokedexComponent implements OnInit {
   image:string[]=[]
   index=0
   data
-  str="https://32wwqvjn96.execute-api.ap-southeast-1.amazonaws.com/dev/pkdex/pkmon/"
+  
 
   constructor(
     private api:ApiService,
@@ -60,20 +60,13 @@ export class PokedexComponent implements OnInit {
     console.log('Yellow')
   }
 
-  async getPokemonData(id){
-    var pokemonID
-    var pokemonData
-    pokemonID=id.replace(/#/g,"")
-    pokemonData= await this.api.getPokemonData(this.str,pokemonID).toPromise()
-    console.log(pokemonData)
-    this.router.navigateByUrl('/profile')
-  }
-
+ 
   onClickOffense(pokemon){
     let index = this.pokedex.indexOf(pokemon);
     
     
     this.pokedex[index]["show_content"] = 'offenseData';
+    console.log(index)
   }
 
   onClickDefender(pokemon){
@@ -85,6 +78,14 @@ export class PokedexComponent implements OnInit {
   onClickReturn(pokemon){
     let index = this.pokedex.indexOf(pokemon);
     this.pokedex[index]["show_content"] = 'mainData';
+  }
+
+  onClickProfile(pokemon){
+    let id = pokemon.id.toLowerCase();
+    id=id.substring(1,id.length)
+    console.log(id)
+    this.router.navigate(['/profile',id])
+    
   }
 }
 
