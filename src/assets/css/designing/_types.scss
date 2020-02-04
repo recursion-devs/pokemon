@@ -185,7 +185,6 @@
         border-bottom-left-radius: 50px;
     }
 }
-
 .bug{
     border-radius: 10px;
     background-color: $color-bug-dark2;
@@ -373,8 +372,7 @@
         border-top-left-radius: 50px;
         border-bottom-left-radius: 50px;
     }
-}
-
+}       
 // pokemon Type Logo Panel
 .panel {
     width: 100%;
@@ -555,7 +553,6 @@
     background-color: $color-flying-base;
     overflow-x: hidden;
     padding-bottom: 30px;
-
 }
 .poison-background{
     background-color: $color-poison-base;
@@ -643,7 +640,11 @@
      padding:5px !important;
      margin: 0 !important
  }
-
+ .sidepadding{
+     padding:5px 20px !important;
+     margin:0 !important
+ }
+ 
  //card style
  .grass-card{
      background-color: $color-grass-dark2;
@@ -655,3 +656,173 @@
     color:$color-white;
     font-family: $font-fam-reg;
  }
+ .normal-card{
+    background-color: $color-normal-dark2;
+    color:$color-white;
+    font-family: $font-fam-ebold;
+ }
+ .normal-card-content{
+    background-color: $color-normal-base;
+    color:$color-white;
+    font-family: $font-fam-reg;
+ }
+ .fire-card{
+    background-color: $color-fire-dark2;
+    color:$color-white;
+    font-family: $font-fam-ebold;
+ }
+ .fire-card-content{
+    background-color: $color-fire-base;
+    color:$color-white;
+    font-family: $font-fam-reg;
+ }
+ .water-card{
+    background-color: $color-water-dark2;
+    color:$color-white;
+    font-family: $font-fam-ebold;
+ }
+ .water-card-content{
+    background-color: $color-water-base;
+    color:$color-white;
+    font-family: $font-fam-reg;
+ }
+ .fighting-card{
+    background-color: $color-fighting-dark2;
+    color:$color-white;
+    font-family: $font-fam-ebold;
+ }
+ .fighting-card-content{
+    background-color: $color-fighting-base;
+    color:$color-white;
+    font-family: $font-fam-reg;
+ }
+.flying-card{
+    background-color: $color-flying-dark2;
+    color:$color-white;
+    font-family: $font-fam-ebold;
+}
+.flying-card-content{
+    background-color: $color-flying-base;
+    color:$color-white;
+    font-family: $font-fam-reg;
+}
+.poison-card{
+    background-color: $color-poison-dark2;
+    color:$color-white;
+    font-family: $font-fam-ebold;
+}
+.poison-card-content{
+    background-color: $color-poison-base;
+    color:$color-white;
+    font-family: $font-fam-reg;
+}
+.ground-card{
+    background-color: $color-ground-dark2;
+    color:$color-white;
+    font-family: $font-fam-ebold;
+}
+.ground-card-content{
+    background-color: $color-ground-base;
+    color:$color-white;
+    font-family: $font-fam-reg
+}
+.rock-card{
+    background-color: $color-rock-dark2;
+    color:$color-white;
+    font-family: $font-fam-ebold;
+}
+.rock-card-component{
+    background-color: $color-rock-base;
+    color:$color-white;
+    font-family: $font-fam-reg;
+}
+.bug-card{
+    background-color: $color-bug-dark2;
+    color:$color-white;
+    font-family: $font-fam-ebold;
+}
+.bug-card-content{
+    background-color: $color-bug-base;
+    color:$color-white;
+    font-family: $font-fam-reg;
+}
+.ghost-card{
+    background-color: $color-ghost-dark2;
+    color:$color-white;
+    font-family: $font-fam-ebold;
+}
+.ghost-card-content{
+    background-color: $color-ghost-base;
+    color:$color-white;
+    font-family: $font-fam-reg;
+}
+.electric-card{
+    background-color: $color-electric-dark2;
+    color:$color-white;
+    font-family: $font-fam-ebold;
+}
+.electric-card-content{
+    background-color: $color-electric-base;
+    color:$color-white;
+    font-family: $font-fam-reg;
+}
+.psychic-card{
+    background-color: $color-psychic-dark2;
+    color:$color-white;
+    font-family: $font-fam-ebold;
+}
+.psychic-card-content{
+    background-color: $color-psychic-base;
+    color:$color-white;
+    font-family: $font-fam-reg;
+}
+.ice-card{
+    background-color: $color-ice-dark2;
+    color:$color-white;
+    font-family: $font-fam-ebold;
+}
+.ice-card-content{
+    background-color: $color-ice-base;
+    color:$color-white;
+    font-family: $font-fam-reg;
+}
+.dragon-card{
+    background-color: $color-dragon-dark2;
+    color:$color-white;
+    font-family: $font-fam-ebold;
+}
+.dragon-card-content{
+    background-color: $color-dragon-base;
+    color:$color-white;
+    font-family: $font-fam-reg;
+}
+.dark-card{
+    background-color: $color-dark-dark2;
+    color:$color-white;
+    font-family: $font-fam-ebold;
+}
+.darl-card-content{
+    background-color: $color-dark-base;
+    color:$color-white;
+    font-family: $font-fam-reg;
+}
+.steel-card{
+    background-color: $color-steel-dark2;
+    color:$color-white;
+    font-family: $font-fam-ebold;
+}
+.steel-card-content{
+    background-color: $color-steel-base;
+    color:$color-white;
+    font-family: $font-fam-reg;
+}
+.fairy-card{
+    background-color: $color-fairy-dark2;
+    color:$color-white;
+    font-family: $font-fam-ebold;
+}
+.fairy-card-content{
+    background-color: $color-fairy-base;
+    color:$color-white;
+    font-family: $font-fam-reg;
+}

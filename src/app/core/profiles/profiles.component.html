@@ -1,16 +1,18 @@
-<div class="container {{data['type']['standard']['0']}}-background" *ngIf="data; else hello">
+<div class="container height-vh-100  {{data['type']['standard']['0']}}-background" *ngIf="data; else hello">
     <div class="row">
         <div class="col-12 " style="text-align: center; padding-top: 30px;">
             <img src="{{id}}" height="100" width="100" alt="{{data['name']}}">
         </div>
 
     </div>
-    <div class="row">
+    
+    <!-- 
+        <div class="row">
         <div class=" panel-3 center-center-col">
             {{data.name | uppercase}}
         </div>
     </div>
-    <!-- <div class="row">
+    <div class="row">
         <div class=" col-3">
             Name            
         </div>
@@ -75,23 +77,104 @@
             {{data.eggSteps}}
         </div>
     </div> -->
-
-    <div class="col-3 nopadding card ">
-        <div class="card-header smallpadding text-center {{data['type']['standard']['0']}}-card ">
-            NAME
+    <div class="row sidepadding">
+        <div class="col-3 nopadding card ">
+            <div class="card-header smallpadding text-center {{data['type']['standard'][0]}}-card ">
+                NAME
+            </div>
+            <div class="card-body smallpadding text-center {{data['type']['standard'][0]}}-card-content">
+                {{data.name}}
+            </div>
         </div>
-        <div class="card-body {{data['type']['standard']['0']}}-card-content">
-            
+        <div class="col-3 nopadding card ">
+            <div class="card-header smallpadding text-center {{data['type']['standard'][0]}}-card ">
+                NO.
+            </div>
+            <div class="card-body smallpadding text-center {{data['type']['standard'][0]}}-card-content">
+                Galar: #{{index}}
+            </div>
+        </div>
+        <div class="col-3 nopadding card ">
+            <div class="card-header smallpadding text-center {{data['type']['standard'][0]}}-card ">
+                CAPTURE RATE
+            </div>
+            <div class="card-body smallpadding text-center {{data['type']['standard'][0]}}-card-content">
+                {{data.captureRate}}%
+            </div>
+        </div>
+        <div class="col-3 nopadding card ">
+            <div class="card-header smallpadding text-center {{data['type']['standard'][0]}}-card ">
+                TYPE
+            </div>
+            <div class="card-body smallpadding text-center {{data['type']['standard'][0]}}-card-content">
+                <ng-container *ngIf="data.type.standard[1]; else oneType">
+                    <div class="col-12  center-center-col smallpadding">
+                        <div class="panel {{data.type.standard[0]}}-base center-center-col">
+                            {{data.type.standard[0] | uppercase}}
+                        </div>
+                    </div>
+
+                    <div class="col-12  center-center-col smallpadding">
+                            <div class="panel {{data.type.standard[1]}}-base center-center-col">
+                                {{data.type.standard[1] | uppercase}}
+                            </div>
+                    </div>
+                </ng-container>
+                <ng-template #oneType>
+                    <div class="col-12 padding-0 center-center-col">
+                        <div class="panel {{data.type.standard[0]}}-base text-center">
+                                {{data.type.standard[0] | uppercase}}
+                            </div>
+                    </div>
+                </ng-template>
         </div>
     </div>
+</div>
+<div class="row sidepadding">
+    <div class="col-4 nopadding card">
+        <div class="card-header smallpadding text-center {{data.type.standard[0]}}-card">
+            CLASSIFICATION
+        </div>
+        <div class="card-body smallpadding text-center {{data.type.standard[0]}}-card-content">
+            {{data.class}}
+        </div>
+    </div>
+    <div class="col-2 nopadding card">
+        <div class="card-header smallpadding text-center {{data.type.standard[0]}}-card">
+           HEIGHT
+        </div>
+        <div class="card-body smallpadding text-center {{data.type.standard[0]}}-card-content">
+            {{data.height}}
+        </div>
+    </div>
+    <div class="col-2 nopadding card">
+        <div class="card-header smallpadding text-center {{data.type.standard[0]}}-card">
+            WEIGHT
+        </div>
+        <div class="card-body smallpadding text-center {{data.type.standard[0]}}-card-content">
+            {{data.weight}}
+        </div>
+    </div>
+    <div class="col-4 nopadding card">
+        <div class="card-header smallpadding text-center {{data.type.standard[0]}}-card">
+            BASE EGG STEP
+        </div>
+        <div class="card-body smallpadding text-center {{data.type.standard[0]}}-card-content">
+            {{data.eggSteps}}
+        </div>
+    </div>
+</div>
+<div class="row sidepadding">
+
+</div>
 </div>
 
 
 <ng-template #hello>
-    <div class="">
-        <div class="col" style="text-align: center; padding-top: 30px;">
-            <h2>No current data</h2>
-            <button><a href="/pokedex">Go Back</a></button>
-        </div>
+<div class="">
+    <div class="col" style="text-align: center; padding-top: 30px;">
+        <h2>No current data</h2>
+        <button><a href="/pokedex">Go Back</a></button>
     </div>
+</div>
 </ng-template>
