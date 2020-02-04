@@ -164,8 +164,8 @@
         </div>
     </div>
 </div>
-<div class="row sidepadding">
-
+<div class="row sidepadding" [hidden]="!(show=='bar')">
+    <canvas width="600" height="600" #ChartBar (click)="click()">{{ chart_bar }}</canvas>
 </div>
 </div>
 
