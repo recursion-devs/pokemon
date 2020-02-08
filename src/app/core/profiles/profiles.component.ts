@@ -3,6 +3,8 @@ import {ApiService} from '@shared/services/api.service'
 import {Router} from '@angular/router'
 import { ActivatedRoute } from '@angular/router';
 import {Chart} from 'chart.js'
+import { ChartType, ChartOptions } from 'chart.js';
+import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
 
 @Component({
   selector: 'app-profiles',
@@ -18,18 +20,27 @@ export class ProfilesComponent implements OnInit {
   show='data'
   str="https://32wwqvjn96.execute-api.ap-southeast-1.amazonaws.com/dev/pkdex/pkmon/"
   
-  
+  public pieChartOptions: ChartOptions = {
+    responsive: true,
+  };
+  public pieChartLabels: Label[] = [['SciFi'], ['Drama'], 'Comedy'];
+  public pieChartData: SingleDataSet = [30, 50, 20];
+  public pieChartType: ChartType = 'pie';
+  public pieChartLegend = true;
+  public pieChartPlugins = [];
+
   constructor(private api: ApiService , 
               private router:Router,
               private activeRoute:ActivatedRoute) { }
 
   async ngOnInit() {
+    
    try {
      this.activeRoute.paramMap.subscribe(params=>{
      this.index=params.get('id')
      }) 
      
-     this.data=await this.api.getPokemonData(this.str,this.index).toPromise() 
+    this.data=await this.api.getPokemonData(this.str,this.index).toPromise() 
     this.id="https://galardex.s3-ap-southeast-1.amazonaws.com/pkimage/"+this.index+".png"
     console.log(this.data)
     

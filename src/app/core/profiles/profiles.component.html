@@ -93,9 +93,18 @@
         </div>
     </div>
 </div>
-<div class="row sidepadding" [hidden]="!(show=='bar')">
-    <canvas width="600" height="600" #ChartBar (click)="click()">{{ chart_bar }}</canvas>
+
+<div class="chart-wrapper">
+    <canvas baseChart 
+    [data]="pieChartData" 
+    [labels]="pieChartLabels" 
+    [chartType]="pieChartType"
+    [options]="pieChartOptions"
+    [plugins]="pieChartPlugins"
+    [legend]="pieChartLegend">
+  </canvas>
 </div>
+
 <div class="row sidepadding">
     <div class="col-12 nopadding card"> 
         <div class="card-header smallpadding text-center {{data.type.standard[0]}}-card">

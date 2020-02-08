@@ -1,6 +1,7 @@
 // Angular Stuff
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChartsModule } from 'ng2-charts';
 
 // Own Module
 import { SharedModule } from '@shared/shared.module';
@@ -21,7 +22,8 @@ import { ProfilesComponent } from './profiles/profiles.component';
   imports: [
     // Angular Stuff
     CommonModule,
-
+    ChartsModule,
+    
     // Own Module
     SharedModule,
 
