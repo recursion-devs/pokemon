@@ -1,4 +1,4 @@
-<div class="container height-vh-100  {{data['type']['standard']['0']}}-background" *ngIf="data; else hello">
+<div class="{{data['type']['standard']['0']}}-background" *ngIf="data; else hello">
     <div class="row">
         <div class="col-12 " style="text-align: center; padding-top: 30px;">
             <img src="{{id}}" height="100" width="100" alt="{{data['name']}}">
@@ -6,78 +6,7 @@
 
     </div>
     
-    <!-- 
-        <div class="row">
-        <div class=" panel-3 center-center-col">
-            {{data.name | uppercase}}
-        </div>
-    </div>
-    <div class="row">
-        <div class=" col-3">
-            Name            
-        </div>
-        <div class="col-3">
-            No.
-        </div>
-        <div class="col-3">
-            Gender Ratio
-        </div>
-        <div class="col-3">
-            Type 
-        </div>
-    </div>
-    <div class="row">
-        <div class=" col-3">
-            {{data.name}}            
-        </div>
-        <div class="col-3">
-            #{{index}}
-        </div>
-        <div class="col-3">
-            {{data.genderRatio}}
-        </div>
-        <div class="col-3">
-            <div *ngFor="let x of data.type.standard">
-                {{x|uppercase}}
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-3">
-            Classification
-        </div>
-        <div class="col-2">
-            Height
-        </div>
-        <div class="col-2">
-            Weight
-        </div>
-        <div class="col-2">
-            Catch%
-        </div>
-        <div class="col-3">
-            Egg Step
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-3">
-           {{data.class}}
-        </div>
-        <div class="col-2">
-            {{data.height}}
-        </div>
-        <div class="col-2">
-            {{data.weight}}
-        </div>
-        <div class="col-2">
-            {{data.captureRate}}%
-        </div>
-        <div class="col-3">
-            {{data.eggSteps}}
-        </div>
-    </div> -->
-    <div class="row sidepadding">
+        <div class="row sidepadding">
         <div class="col-3 nopadding card ">
             <div class="card-header smallpadding text-center {{data['type']['standard'][0]}}-card ">
                 NAME

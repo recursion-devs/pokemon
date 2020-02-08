@@ -247,7 +247,7 @@ export const OFFENSE:Offense[]=
   {
     "type":"grass",
     "class":{
-    " ground":"x2",
+    "ground":"x2",
     "rock":"x2",
     "water":"x2",
     "normal":"x1",
