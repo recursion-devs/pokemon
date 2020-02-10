@@ -8,7 +8,7 @@
     
         <div class="row sidepadding">
         <div class="col-3 nopadding card ">
-            <div class="card-header smallpadding text-center {{data['type']['standard'][0]}}-card ">
+            <div #bg class="card-header smallpadding text-center {{data['type']['standard'][0]}}-card ">
                 NAME
             </div>
             <div class="card-body smallpadding text-center {{data['type']['standard'][0]}}-card-content">
@@ -93,18 +93,21 @@
         </div>
     </div>
 </div>
-
-<div class="chart-wrapper">
-    <canvas baseChart 
-    [data]="pieChartData" 
-    [labels]="pieChartLabels" 
-    [chartType]="pieChartType"
-    [options]="pieChartOptions"
-    [plugins]="pieChartPlugins"
-    [legend]="pieChartLegend">
-  </canvas>
+<div class="row sidepadding">
+    <div class="col-12 nopadding">
+        <div class="chart-wrapper ">
+            <canvas baseChart  
+            [datasets]="barChartData" 
+            [labels]="barChartLabels" 
+            [chartType]="barChartType"
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins"
+            [legend]="barChartLegend"
+            >
+        </canvas>
+        </div>
+    </div>
 </div>
-
 <div class="row sidepadding">
     <div class="col-12 nopadding card"> 
         <div class="card-header smallpadding text-center {{data.type.standard[0]}}-card">

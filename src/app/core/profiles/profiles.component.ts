@@ -1,10 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {ApiService} from '@shared/services/api.service'
 import {Router} from '@angular/router'
 import { ActivatedRoute } from '@angular/router';
 import {Chart} from 'chart.js'
-import { ChartType, ChartOptions } from 'chart.js';
-import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
+import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
+import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip, Color } from 'ng2-charts';
 
 @Component({
   selector: 'app-profiles',
@@ -13,6 +13,7 @@ import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsToolt
 })
 export class ProfilesComponent implements OnInit {
   @ViewChild('ChartBar',{static:true}) chartRefBar;
+  @ViewChild("bg") bg: ElementRef
   chart_bar : any;
   id
   index
@@ -20,14 +21,56 @@ export class ProfilesComponent implements OnInit {
   show='data'
   str="https://32wwqvjn96.execute-api.ap-southeast-1.amazonaws.com/dev/pkdex/pkmon/"
   
-  public pieChartOptions: ChartOptions = {
+  barChartOptions: ChartOptions = 
+  {
     responsive: true,
-  };
-  public pieChartLabels: Label[] = [['SciFi'], ['Drama'], 'Comedy'];
-  public pieChartData: SingleDataSet = [30, 50, 20];
-  public pieChartType: ChartType = 'pie';
-  public pieChartLegend = true;
-  public pieChartPlugins = [];
+    title: {
+      display: true,
+      text: 'Type Multiplier',
+      fontColor: 'white',  // chart title color (can be hexadecimal too)
+    },
+    scales: {
+      xAxes: [{
+        stacked: true,
+        ticks: {
+          fontColor: 'white',  // x axe labels (can be hexadecimal too)
+        },
+        gridLines: {
+          color: '#5f5e5e'  // grid line color (can be removed or changed)
+        }
+      }],
+      yAxes: [{
+        stacked: true,
+        ticks: {
+          fontColor: 'white',  // y axes numbers color (can be hexadecimal too)
+          min: 0,
+          beginAtZero: true,
+
+        },
+        gridLines: {
+          color: '#5f5e5e'  // grid line color (can be removed or changed)
+        },
+        scaleLabel: {
+          display: true,
+          labelString: 'Pokemon Type',
+          fontColor: 'white',  // y axe label color (can be hexadecimal too)
+        }
+      }]
+    },
+    legend: {
+      display: true,
+      labels: {
+        fontColor: 'white', // legend color (can be hexadecimal too)
+      },
+    }
+ }
+  barChartLabels: Label[]
+  barChartType: ChartType = 'horizontalBar';
+  barChartLegend = true;
+  barChartPlugins = [];
+  barChartColor: Color[]
+  
+  barChartData: ChartDataSets[] 
 
   constructor(private api: ApiService , 
               private router:Router,
@@ -43,9 +86,21 @@ export class ProfilesComponent implements OnInit {
     this.data=await this.api.getPokemonData(this.str,this.index).toPromise() 
     this.id="https://galardex.s3-ap-southeast-1.amazonaws.com/pkimage/"+this.index+".png"
     console.log(this.data)
-    
-    this.click()
-
+    let label=[]
+    let chartData=[]
+    for (const x in this.data.typeDamage) {
+      label.push(x)
+      chartData.push(parseFloat(this.data.typeDamage[x].slice(1)))
+    }
+    console.log(label)
+    console.log(chartData)
+    this.barChartLabels=label
+    this.barChartData=[{data:chartData,label:'Multiplier',backgroundColor:["black","white","black","white","black","white","black","white","black","white","black","white","black","white","black","white","black","white"]}]
+    this.barChartColor=[{
+      borderColor: 'black',
+      backgroundColor:'white' ,
+      
+    }]
      
    } catch (error) {
     
@@ -54,47 +109,8 @@ export class ProfilesComponent implements OnInit {
       
     }
    }
-   click(){
-     this.show='bar'
-     console.log(this.show)
-     this.generateBar()
-   }
   
-  generateBar(){
-    console.log(this.chart_bar)
-    try {
-      this.chart_bar = new Chart(this.chartRefBar.nativeElement, {
-        type: 'bar',
-        data: {
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-          datasets: [{
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
-              backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)'
-              ],
-              borderColor: [
-                  'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
-              ],
-              borderWidth: 1
-          }]
-      },
   
-      });
-    } catch (error) {
-      console.log(error.message)
-    }
-    console.log(this.chart_bar)
-  }
+  
   }
 
