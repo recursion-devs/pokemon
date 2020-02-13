@@ -5,6 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import {Chart} from 'chart.js'
 import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip, Color } from 'ng2-charts';
+import {COLOR} from '@app/shared/objects/color'
+
 
 @Component({
   selector: 'app-profiles',
@@ -20,7 +22,7 @@ export class ProfilesComponent implements OnInit {
   data
   show='data'
   str="https://32wwqvjn96.execute-api.ap-southeast-1.amazonaws.com/dev/pkdex/pkmon/"
-  
+  colors=COLOR
   barChartOptions: ChartOptions = 
   {
     responsive: true,
@@ -77,7 +79,7 @@ export class ProfilesComponent implements OnInit {
               private activeRoute:ActivatedRoute) { }
 
   async ngOnInit() {
-    
+  let barColor=""
    try {
      this.activeRoute.paramMap.subscribe(params=>{
      this.index=params.get('id')
@@ -94,14 +96,20 @@ export class ProfilesComponent implements OnInit {
     }
     console.log(label)
     console.log(chartData)
+    console.log(this.colors)
+    for (const x in this.colors){
+      console.log(this.colors[x]['type'])
+      if(this.colors[x]['type']==this.data.type.standard[0]){
+        barColor=(this.colors[x]['color']['dark2'])
+      }
+    }
     this.barChartLabels=label
-    this.barChartData=[{data:chartData,label:'Multiplier',backgroundColor:["black","white","black","white","black","white","black","white","black","white","black","white","black","white","black","white","black","white"]}]
+    this.barChartData=[{data:chartData,label:'Multiplier',backgroundColor:[barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor]}]
     this.barChartColor=[{
       borderColor: 'black',
       backgroundColor:'white' ,
       
     }]
-     
    } catch (error) {
     
     }
@@ -110,7 +118,7 @@ export class ProfilesComponent implements OnInit {
     }
    }
   
-  
-  
   }
+
+  
 
