@@ -28,14 +28,17 @@ export class ProfilesComponent implements OnInit {
     responsive: true,
     title: {
       display: true,
-      text: 'Type Multiplier',
-      fontColor: 'white',  // chart title color (can be hexadecimal too)
+      text: 'TYPE MULTIPLIER',
+      fontColor: 'white', 
+      fontFamily:'Proxima-Nova-ExtraBold' ,
+      fontSize:16// chart title color (can be hexadecimal too)
     },
     scales: {
       xAxes: [{
         stacked: true,
         ticks: {
-          fontColor: 'white',  // x axe labels (can be hexadecimal too)
+          fontColor: 'white',
+          fontFamily:'Proxima-Nova-Regular' // x axe labels (can be hexadecimal too) bottom part!
         },
         gridLines: {
           color: '#5f5e5e'  // grid line color (can be removed or changed)
@@ -44,7 +47,8 @@ export class ProfilesComponent implements OnInit {
       yAxes: [{
         stacked: true,
         ticks: {
-          fontColor: 'white',  // y axes numbers color (can be hexadecimal too)
+          fontColor: 'white', 
+          fontFamily:'Proxima-Nova-Regular', // y axes numbers color (can be hexadecimal too) side part!
           min: 0,
           beginAtZero: true,
 
@@ -54,8 +58,10 @@ export class ProfilesComponent implements OnInit {
         },
         scaleLabel: {
           display: true,
-          labelString: 'Pokemon Type',
-          fontColor: 'white',  // y axe label color (can be hexadecimal too)
+          labelString: 'POKEMON TYPE',
+          fontColor: 'white', 
+          fontFamily:'Proxima-Nova-ExtraBold',
+          fontSize:14 // y axe label color (can be hexadecimal too)
         }
       }]
     },
@@ -67,7 +73,7 @@ export class ProfilesComponent implements OnInit {
     }
  }
   barChartLabels: Label[]
-  barChartType: ChartType = 'horizontalBar';
+  barChartType: ChartType = 'bar';
   barChartLegend = true;
   barChartPlugins = [];
   barChartColor: Color[]
@@ -104,7 +110,7 @@ export class ProfilesComponent implements OnInit {
       }
     }
     this.barChartLabels=label
-    this.barChartData=[{data:chartData,label:'Multiplier',backgroundColor:[barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor]}]
+    this.barChartData=[{data:chartData ,categoryPercentage:1,label:'Multiplier',backgroundColor:[barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor,barColor]}]
     this.barChartColor=[{
       borderColor: 'black',
       backgroundColor:'white' ,
