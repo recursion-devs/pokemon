@@ -17,6 +17,7 @@ export class PokedexComponent implements OnInit {
   image:string[]=[]
   index=0
   data
+  loading
   
 
   constructor(
@@ -25,6 +26,7 @@ export class PokedexComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.loading=true
     this.pokedex.forEach(pokemon => {
       let offense_name=[]
       let offense_class
@@ -53,6 +55,7 @@ export class PokedexComponent implements OnInit {
     // console.log(this.pokedex)
 
     // this.showContent = 'mainData';
+    this.loading=false
   }
 
   changeHeading(){

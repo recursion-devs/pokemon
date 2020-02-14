@@ -16,6 +16,7 @@ import { POKEDEX } from '@shared/objects/pkdex';
 })
 export class ProfilesComponent implements OnInit {
   @ViewChild('ChartBar',{static:true}) chartRefBar;
+  loading
   @ViewChild("bg") bg: ElementRef
   pictureHolder=[]
   pokedex=POKEDEX
@@ -88,6 +89,7 @@ export class ProfilesComponent implements OnInit {
               private activeRoute:ActivatedRoute) { }
 
   async ngOnInit() {
+  this.loading=true
   let barColor=""
    try {
      this.activeRoute.paramMap.subscribe(params=>{
@@ -108,7 +110,20 @@ export class ProfilesComponent implements OnInit {
             "link":"https://galardex.s3-ap-southeast-1.amazonaws.com/pkimage/"+this.pokedex[x].id.replace(/#/g,"")+".png",
             "name":element.toLowerCase()
           }
-          this.pictureHolder.push(tempo)
+          let checker=0
+
+          for (const y in this.pictureHolder){
+            if(tempo['id']==this.pictureHolder[y]['id']){
+                checker=1
+                break
+            }
+            
+          }
+          if (checker!=1){
+            this.pictureHolder.push(tempo)
+          }
+          
+          
         }
       }
   });
@@ -138,6 +153,7 @@ export class ProfilesComponent implements OnInit {
     finally{
       
     }
+    this.loading=false
    }
 
    evol(id){

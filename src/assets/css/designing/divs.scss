@@ -49,3 +49,28 @@
 .index-0{
     z-index: 0;
 }
+
+.loading{
+    background-color: #fbe9e7;
+
+    margin: 0;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+    overflow: hidden !important;
+}
+
+
+.sword{
+    background-color: $color-sword;
+    color:$color-white;
+    padding: 3px;
+    font-family: $font-fam-ebold;
+}
+.shield{
+    background-color: $color-shield;
+    color: $color-white;
+    padding: 3px;
+    font-family: $font-fam-ebold;
+}

@@ -1,3 +1,5 @@
+
+<app-loading *ngIf="loading" class="loading"></app-loading>
 <div class="{{data['type']['standard']['0']}}-background" *ngIf="data; else hello">
     <div class="row">
         <div class="col-12 " style="text-align: center; padding-top: 30px;">
@@ -166,7 +168,24 @@
                         </div>
             </ng-container>
         
+        </div>
     </div>
+</div>
+
+<div class="row sidepadding">
+    <div class="col-12 nopadding card">
+        <div class="card-header smallpadding text-center {{data.type.standard[0]}}-card"> 
+            LOCATION
+        </div>
+        <div class="card-body small-padding text-left {{data.type.standard[0]}}-card-content">
+                <div class="p-t-5">
+                    <span class="sword">SWORD</span> {{data.location.sword}}
+                </div>
+                <div class="p-t-5">
+                    <span class="shield">SHIELD</span> {{data.location.shield}}
+                </div>
+        </div>
+
     </div>
 </div>
 

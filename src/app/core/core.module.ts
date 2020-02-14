@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { PokedexComponent } from './pokedex/pokedex.component';
 import { ProfilesComponent } from './profiles/profiles.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   imports: [
@@ -45,6 +46,7 @@ import { ProfilesComponent } from './profiles/profiles.component';
     HomeComponent,
     PokedexComponent,
     ProfilesComponent,
+    LoadingComponent,
   ]
 })
 export class CoreModule { }
