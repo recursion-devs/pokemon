@@ -2,10 +2,11 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {ApiService} from '@shared/services/api.service'
 import {Router} from '@angular/router'
 import { ActivatedRoute } from '@angular/router';
-import {Chart} from 'chart.js'
+
 import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip, Color } from 'ng2-charts';
 import {COLOR} from '@app/shared/objects/color'
+import { POKEDEX } from '@shared/objects/pkdex';
 
 
 @Component({
@@ -16,6 +17,8 @@ import {COLOR} from '@app/shared/objects/color'
 export class ProfilesComponent implements OnInit {
   @ViewChild('ChartBar',{static:true}) chartRefBar;
   @ViewChild("bg") bg: ElementRef
+  pictureHolder=[]
+  pokedex=POKEDEX
   chart_bar : any;
   id
   index
@@ -28,7 +31,7 @@ export class ProfilesComponent implements OnInit {
     responsive: true,
     title: {
       display: true,
-      text: 'TYPE MULTIPLIER',
+      text: 'WEAKNESS',
       fontColor: 'white', 
       fontFamily:'Proxima-Nova-ExtraBold' ,
       fontSize:16// chart title color (can be hexadecimal too)
@@ -94,17 +97,30 @@ export class ProfilesComponent implements OnInit {
     this.data=await this.api.getPokemonData(this.str,this.index).toPromise() 
     this.id="https://galardex.s3-ap-southeast-1.amazonaws.com/pkimage/"+this.index+".png"
     console.log(this.data)
+    console.log(this.pokedex)
+    this.data.evolutionChain.chain.forEach(element => {
+      
+    for (const x in this.pokedex) {
+        if(this.pokedex[x].name.toLowerCase()==element.toLowerCase()){
+          console.log(this.pokedex[x].id.replace(/#/g,""))
+          let tempo={
+            "id":this.pokedex[x].id.replace(/#/g,""),
+            "link":"https://galardex.s3-ap-southeast-1.amazonaws.com/pkimage/"+this.pokedex[x].id.replace(/#/g,"")+".png",
+            "name":element.toLowerCase()
+          }
+          this.pictureHolder.push(tempo)
+        }
+      }
+  });
     let label=[]
     let chartData=[]
     for (const x in this.data.typeDamage) {
       label.push(x)
       chartData.push(parseFloat(this.data.typeDamage[x].slice(1)))
     }
-    console.log(label)
-    console.log(chartData)
-    console.log(this.colors)
+    
     for (const x in this.colors){
-      console.log(this.colors[x]['type'])
+      
       if(this.colors[x]['type']==this.data.type.standard[0]){
         barColor=(this.colors[x]['color']['dark2'])
       }
@@ -122,6 +138,13 @@ export class ProfilesComponent implements OnInit {
     finally{
       
     }
+   }
+
+   evol(id){
+    
+    this.router.navigateByUrl('/profile', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/profile',id])
+  }); 
    }
   
   }
