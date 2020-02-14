@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { POKEDEX } from '@shared/objects/pkdex';
 import {OFFENSE} from '@shared/objects/offense';
 import { ApiService } from '@shared/services/api.service'
@@ -17,7 +17,8 @@ export class PokedexComponent implements OnInit {
   image:string[]=[]
   index=0
   data
-  loading
+  loading=true
+  
   
 
   constructor(
@@ -25,8 +26,20 @@ export class PokedexComponent implements OnInit {
     private router:Router,
   ) { }
 
-  ngOnInit() {
-    this.loading=true
+  async ngOnInit() {
+    
+     await this.getData()
+    // console.log(this.pokedex)
+    // this.showContent = 'mainData';
+    
+    this.loading=false
+    console.log(this.loading)
+  }
+ 
+  getData(){
+    
+    
+    console.log(this.loading)
     this.pokedex.forEach(pokemon => {
       let offense_name=[]
       let offense_class
@@ -50,14 +63,9 @@ export class PokedexComponent implements OnInit {
       pokemon["offense_damage"]=offense_damage
       pokemon["img_link"] = imgLink
       pokemon["show_content"] = 'mainData'
+      
     });
-
-    // console.log(this.pokedex)
-
-    // this.showContent = 'mainData';
-    this.loading=false
   }
-
   changeHeading(){
     document.getElementById('type').style.background='yellow';
     console.log('Yellow')
@@ -91,5 +99,6 @@ export class PokedexComponent implements OnInit {
     
   }
 }
+
 
 

@@ -14,3 +14,14 @@ button {
     background-color: $color-3;
     color: $color-2;
 }
+.back-button{
+   
+    color: $color-white;
+    font-family: $font-fam-bold;
+    font-size: 15px;
+    width:80px;
+    border: none;
+    border-radius: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}

@@ -162,6 +162,9 @@ export class ProfilesComponent implements OnInit {
       this.router.navigate(['/profile',id])
   }); 
    }
+   back(){
+     this.router.navigate(['/pokedex'])
+   }
   
   }
 
