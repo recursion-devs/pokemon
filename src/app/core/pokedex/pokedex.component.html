@@ -1,164 +1,176 @@
-<app-loading *ngIf="loading" class="loading"></app-loading>
-<div class="container" >
-	<ng-container *ngFor="let pokemon of pokedex">
-			<div class="row pokedex-panel index-0" >
 
 
-					<div class="col {{pokemon.type.standard[0]}}">
-						<div class="row">
-							<ng-container *ngIf="pokemon.show_content=='mainData'">
-								<div class="col-9 content" (click)="onClickProfile(pokemon)">
-
-										<div class="row height-per-50"> <!-- upper division -->
-											<div class="col-12 col-md-3 center-left-col">
-												{{pokemon.id}} {{pokemon.name}}
-											</div>
-
-											<div class="col-12 col-md-9 center-center-col">
-												<div class="row height-per-50 w-100">
-													<ng-container *ngIf="pokemon.type.standard[1]; else oneType">
-														<div class="col-1 col-md-2 padding-0 center-left-col index-1">
-															<img class="icon-img" src="assets/pictures/type/{{pokemon.type.standard[0]}}.png" alt="{{pokemon.type.standard[0]}}">
-														</div>
-														<div class="col-5 col-md-4 padding-0 pr-2 center-center-col index-0">
-															<div class="panel {{pokemon.type.standard[0]}}-base center-center-col">
-																{{pokemon.type.standard[0] | uppercase}}
-															</div>
-														</div>
-
-														<div class="col-1 col-md-2 padding-0 center-left-col index-1">
-															<img class="icon-img" src="assets/pictures/type/{{pokemon.type.standard[1]}}.png" alt="{{pokemon.type.standard[0]}}">
-														</div>
-														<div class="col-5 col-md-4 padding-0 pr-2 center-center-col index-0">
-																<div class="panel {{pokemon.type.standard[1]}}-base center-center-col">
-																	{{pokemon.type.standard[1] | uppercase}}
-																</div>
-														</div>
-													</ng-container>
-
-													<ng-template #oneType>
-															<div class="col-2 col-md-3 padding-0 center-center-col">
+<div *ngIf="pokedex">
+	<div class="container" >
+		<div >
+			<label class="expandSearch">
+				<input type="text" placeholder="Search..." name="search" (keyup)="search(searchInput.value)" #searchInput>
+				<i class="material-icons">search</i>
+			</label>
+		</div>
+		<app-loading *ngIf="loading" class="loading"></app-loading>
+	
+		<ng-container *ngFor="let pokemon of pokedex">
+				<div class="row pokedex-panel index-0" >
+	
+	
+						<div class="col {{pokemon.type.standard[0]}}">
+							<div class="row">
+								<ng-container *ngIf="pokemon.show_content=='mainData'">
+									<div class="col-9 content" (click)="onClickProfile(pokemon)">
+	
+											<div class="row height-per-50"> <!-- upper division -->
+												<div class="col-12 col-md-3 center-left-col">
+													{{pokemon.id}} {{pokemon.name}}
+												</div>
+	
+												<div class="col-12 col-md-9 center-center-col">
+													<div class="row height-per-50 w-100">
+														<ng-container *ngIf="pokemon.type.standard[1]; else oneType">
+															<div class="col-1 col-md-2 padding-0 center-left-col index-1">
 																<img class="icon-img" src="assets/pictures/type/{{pokemon.type.standard[0]}}.png" alt="{{pokemon.type.standard[0]}}">
 															</div>
-
-															<div class="col-10 col-md-9 padding-0 center-center-col">
-																<div class="panel {{pokemon.type.standard[0]}}-base text-center">
-																		{{pokemon.type.standard[0] | uppercase}}
+															<div class="col-5 col-md-4 padding-0 pr-2 center-center-col index-0">
+																<div class="panel {{pokemon.type.standard[0]}}-base center-center-col">
+																	{{pokemon.type.standard[0] | uppercase}}
+																</div>
+															</div>
+	
+															<div class="col-1 col-md-2 padding-0 center-left-col index-1">
+																<img class="icon-img" src="assets/pictures/type/{{pokemon.type.standard[1]}}.png" alt="{{pokemon.type.standard[0]}}">
+															</div>
+															<div class="col-5 col-md-4 padding-0 pr-2 center-center-col index-0">
+																	<div class="panel {{pokemon.type.standard[1]}}-base center-center-col">
+																		{{pokemon.type.standard[1] | uppercase}}
 																	</div>
 															</div>
-														</ng-template>
+														</ng-container>
+	
+														<ng-template #oneType>
+																<div class="col-2 col-md-3 padding-0 center-center-col">
+																	<img class="icon-img" src="assets/pictures/type/{{pokemon.type.standard[0]}}.png" alt="{{pokemon.type.standard[0]}}">
+																</div>
+	
+																<div class="col-10 col-md-9 padding-0 center-center-col">
+																	<div class="panel {{pokemon.type.standard[0]}}-base text-center">
+																			{{pokemon.type.standard[0] | uppercase}}
+																		</div>
+																</div>
+															</ng-template>
+													</div>
 												</div>
+											</div> <!-- upper division end -->
+	
+											<div class="row height-per-50 index-1"> <!-- lower division -->
+												<div class="col-6 center-center-col pointer upper" (click)="onClickOffense(pokemon)">
+													<div class="panel-2 {{pokemon.type.standard[0]}} text-center padding-5">
+														OFFENSE
+													</div>
+												</div>
+	
+												<div class="col-6 center-center-col pointer upper" (click)="onClickDefender(pokemon)">
+													<div class="panel-2 {{pokemon.type.standard[0]}} text-center padding-5">
+														DEFENDER
+													</div>
+												</div>
+											</div> <!-- lower division end -->
+	
+										</div> <!-- content end -->
+								</ng-container>
+	
+								<ng-container *ngIf="pokemon.show_content=='offenseData'">
+									<div class="col-9 content" (click)="onClickReturn(pokemon)">
+										<div class="row height-per-100"> <!-- upper division -->
+	
+											<div class="col-6 col-md-3 center-center-col">
+												<div class="row no-padding panel-white {{pokemon.type.standard[0]}}-base text-center responsive-50">
+													<div class='col-12 top-center-col no-padding'>
+														x0 
+													</div>
+	
+													<ng-container *ngIf="pokemon.type.standard[0]; else oneOffense ">
+														<ng-container *ngFor="let item of pokemon.offense_name; let i=index"> 
+															<ng-container *ngIf="pokemon.offense_damage[i] == 'x0'; else oneOffense ">
+																<div class='col-4 top-center-col'>
+																	<img class="icon-img" src="assets/pictures/type/{{item}}.png" alt="{{item}}">
+																</div>
+															</ng-container>
+														</ng-container>
+													</ng-container>
+												</div>	
 											</div>
-										</div> <!-- upper division end -->
-
-										<div class="row height-per-50 index-1"> <!-- lower division -->
-											<div class="col-6 center-center-col pointer upper" (click)="onClickOffense(pokemon)">
-												<div class="panel-2 {{pokemon.type.standard[0]}} text-center padding-5">
-													OFFENSE
-												</div>
+	
+											<div class="col-6 col-md-3 center-center-col">
+												<div class="row no-padding panel-white {{pokemon.type.standard[0]}}-base text-center responsive-50">
+													<div class='col-12 top-center-col no-padding'>
+														x0.5
+													</div>
+	
+													<ng-container *ngIf="pokemon.type.standard[0]; else oneOffense ">
+														<ng-container *ngFor="let item of pokemon.offense_name; let i=index"> 
+															<ng-container *ngIf="pokemon.offense_damage[i] == 'x0.5'; else oneOffense ">
+																<div class='col-4 top-center-col'>
+																	<img class="icon-img" src="assets/pictures/type/{{item}}.png" alt="{{item}}">
+																</div>
+															</ng-container>
+														</ng-container>
+													</ng-container>
+												</div>	
 											</div>
-
-											<div class="col-6 center-center-col pointer upper" (click)="onClickDefender(pokemon)">
-												<div class="panel-2 {{pokemon.type.standard[0]}} text-center padding-5">
-													DEFENDER
-												</div>
+	
+											<div class="col-6 col-md-3 center-center-col">
+												<div class="row no-padding panel-white {{pokemon.type.standard[0]}}-base text-center responsive-50">
+													<div class='col-12 top-center-col no-padding'>
+														x1 
+													</div>
+													<ng-container *ngIf="pokemon.type.standard[0]; else oneOffense ">
+														<ng-container *ngFor="let item of pokemon.offense_name; let i=index"> 
+															<ng-container *ngIf="pokemon.offense_damage[i] == 'x1'; else oneOffense ">
+																<div class='col-4 top-center-col'>
+																	<img class="icon-img" src="assets/pictures/type/{{item}}.png" alt="{{item}}">
+																</div>
+															</ng-container>
+														</ng-container>
+													</ng-container>
+												</div>	
 											</div>
-										</div> <!-- lower division end -->
-
-									</div> <!-- content end -->
-							</ng-container>
-
-							<ng-container *ngIf="pokemon.show_content=='offenseData'">
-								<div class="col-9 content" (click)="onClickReturn(pokemon)">
-									<div class="row height-per-100"> <!-- upper division -->
-
-										<div class="col-6 col-md-3 center-center-col">
-											<div class="row no-padding panel-white {{pokemon.type.standard[0]}}-base text-center responsive-50">
-												<div class='col-12 top-center-col no-padding'>
-													x0 
-												</div>
-
-												<ng-container *ngIf="pokemon.type.standard[0]; else oneOffense ">
-													<ng-container *ngFor="let item of pokemon.offense_name; let i=index"> 
-														<ng-container *ngIf="pokemon.offense_damage[i] == 'x0'; else oneOffense ">
-															<div class='col-4 top-center-col'>
-																<img class="icon-img" src="assets/pictures/type/{{item}}.png" alt="{{item}}">
-															</div>
+	
+											<div class="col-6 col-md-3 center-center-col">
+												<div class="row no-padding panel-white {{pokemon.type.standard[0]}}-base text-center responsive-50">
+													<div class='col-12 top-center-col no-padding'>
+														x2
+													</div>
+	
+													<ng-container *ngIf="pokemon.type.standard[0]; else oneOffense ">
+														<ng-container *ngFor="let item of pokemon.offense_name; let i=index"> 
+															<ng-container *ngIf="pokemon.offense_damage[i] == 'x2'; else oneOffense ">
+																<div class='col-4 top-center-col'>
+																	<img class="icon-img" src="assets/pictures/type/{{item}}.png" alt="{{item}}">
+																</div>
+															</ng-container>
 														</ng-container>
 													</ng-container>
-												</ng-container>
-											</div>	
+												</div>	
+											</div>
+	
 										</div>
-
-										<div class="col-6 col-md-3 center-center-col">
-											<div class="row no-padding panel-white {{pokemon.type.standard[0]}}-base text-center responsive-50">
-												<div class='col-12 top-center-col no-padding'>
-													x0.5
-												</div>
-
-												<ng-container *ngIf="pokemon.type.standard[0]; else oneOffense ">
-													<ng-container *ngFor="let item of pokemon.offense_name; let i=index"> 
-														<ng-container *ngIf="pokemon.offense_damage[i] == 'x0.5'; else oneOffense ">
-															<div class='col-4 top-center-col'>
-																<img class="icon-img" src="assets/pictures/type/{{item}}.png" alt="{{item}}">
-															</div>
-														</ng-container>
-													</ng-container>
-												</ng-container>
-											</div>	
-										</div>
-
-										<div class="col-6 col-md-3 center-center-col">
-											<div class="row no-padding panel-white {{pokemon.type.standard[0]}}-base text-center responsive-50">
-												<div class='col-12 top-center-col no-padding'>
-													x1 
-												</div>
-												<ng-container *ngIf="pokemon.type.standard[0]; else oneOffense ">
-													<ng-container *ngFor="let item of pokemon.offense_name; let i=index"> 
-														<ng-container *ngIf="pokemon.offense_damage[i] == 'x1'; else oneOffense ">
-															<div class='col-4 top-center-col'>
-																<img class="icon-img" src="assets/pictures/type/{{item}}.png" alt="{{item}}">
-															</div>
-														</ng-container>
-													</ng-container>
-												</ng-container>
-											</div>	
-										</div>
-
-										<div class="col-6 col-md-3 center-center-col">
-											<div class="row no-padding panel-white {{pokemon.type.standard[0]}}-base text-center responsive-50">
-												<div class='col-12 top-center-col no-padding'>
-													x2
-												</div>
-
-												<ng-container *ngIf="pokemon.type.standard[0]; else oneOffense ">
-													<ng-container *ngFor="let item of pokemon.offense_name; let i=index"> 
-														<ng-container *ngIf="pokemon.offense_damage[i] == 'x2'; else oneOffense ">
-															<div class='col-4 top-center-col'>
-																<img class="icon-img" src="assets/pictures/type/{{item}}.png" alt="{{item}}">
-															</div>
-														</ng-container>
-													</ng-container>
-												</ng-container>
-											</div>	
-										</div>
-
 									</div>
-								</div>
-							</ng-container>
-
-							<ng-container *ngIf="pokemon.show_content=='defenderData'">
-								<div class="col-9 content" (click)="onClickReturn(pokemon)">
-									DEFENDER
-								</div>
-							</ng-container>
-
-									<div class="col-3 img center-center-col" >
-										<img src={{pokemon.img_link}} alt={{pokemon.name}} height="80" width="80">
+								</ng-container>
+	
+								<ng-container *ngIf="pokemon.show_content=='defenderData'">
+									<div class="col-9 content" (click)="onClickReturn(pokemon)">
+										DEFENDER
 									</div>
+								</ng-container>
+	
+										<div class="col-3 img center-center-col" >
+											<img src={{pokemon.img_link}} alt={{pokemon.name}} height="80" width="80">
+										</div>
+							</div>
 						</div>
-					</div>
-
-			</div>
-	</ng-container>
+	
+				</div>
+		</ng-container>
+		
+	</div>
 </div>

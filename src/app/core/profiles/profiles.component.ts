@@ -9,6 +9,7 @@ import {COLOR} from '@app/shared/objects/color'
 import { POKEDEX } from '@shared/objects/pkdex';
 
 
+
 @Component({
   selector: 'app-profiles',
   templateUrl: './profiles.component.html',
@@ -153,9 +154,8 @@ export class ProfilesComponent implements OnInit {
     finally{
       
     }
-    this.loading=false
-   }
-
+  this.loading=false
+  }
    evol(id){
     
     this.router.navigateByUrl('/profile', { skipLocationChange: true }).then(() => {
@@ -165,6 +165,7 @@ export class ProfilesComponent implements OnInit {
    back(){
      this.router.navigate(['/pokedex'])
    }
+   
   
   }
 

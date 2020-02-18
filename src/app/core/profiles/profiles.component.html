@@ -1,5 +1,6 @@
 
 <app-loading *ngIf="loading" class="loading"></app-loading>
+
 <div class="{{data['type']['standard']['0']}}-background" *ngIf="data; else hello">
     <div class="p-t-20 p-l-15">
         <button (click)="back()" class="back-button {{data['type']['standard'][0]}}-card" >⇦</button>

@@ -3,6 +3,7 @@ import { POKEDEX } from '@shared/objects/pkdex';
 import {OFFENSE} from '@shared/objects/offense';
 import { ApiService } from '@shared/services/api.service'
 import { RouterModule, Routes,Router } from '@angular/router';
+import { Pokemon } from '@app/shared/objects/pokemon';
 
 
 @Component({
@@ -12,12 +13,15 @@ import { RouterModule, Routes,Router } from '@angular/router';
 })
 export class PokedexComponent implements OnInit {
   showContent = ''
-  pokedex=POKEDEX
+  
+  pokedex
+  list_pokedex=POKEDEX
   offense=OFFENSE
   image:string[]=[]
   index=0
   data
   loading=true
+  searchStr=""
   
   
 
@@ -27,20 +31,18 @@ export class PokedexComponent implements OnInit {
   ) { }
 
   async ngOnInit() {
-    
-     await this.getData()
+    this.loading=true
+    this.getData()
     // console.log(this.pokedex)
     // this.showContent = 'mainData';
-    
     this.loading=false
-    console.log(this.loading)
   }
+
+  
  
   getData(){
-    
-    
-    console.log(this.loading)
-    this.pokedex.forEach(pokemon => {
+    console.log(this.list_pokedex)
+    this.list_pokedex.forEach(pokemon => {
       let offense_name=[]
       let offense_class
       let offense_damage=[]
@@ -65,6 +67,8 @@ export class PokedexComponent implements OnInit {
       pokemon["show_content"] = 'mainData'
       
     });
+    this.pokedex=this.list_pokedex
+    this.loading=false
   }
   changeHeading(){
     document.getElementById('type').style.background='yellow';
@@ -96,6 +100,29 @@ export class PokedexComponent implements OnInit {
     id=id.substring(1,id.length)
     console.log(id)
     this.router.navigate(['/profile',id])
+    
+  }
+  async search(str){
+    this.loading=true
+    this.searchStr=str
+    
+    if(this.searchStr){
+      this.getSearchData(this.searchStr)
+    }
+    else{
+    await this.getData()
+    
+    }
+  }
+
+  getSearchData(str){
+    this.pokedex=[]
+    this.list_pokedex.forEach(pokemon => {
+      if (pokemon.name.toLowerCase().includes(str.toLowerCase())){
+       this.pokedex.push(pokemon)
+      }
+    });
+    this.loading=false
     
   }
 }
