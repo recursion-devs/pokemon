@@ -119,6 +119,7 @@ export class PokedexComponent implements OnInit {
     this.pokedex=[]
     this.list_pokedex.forEach(pokemon => {
       if (pokemon.name.toLowerCase().includes(str.toLowerCase())){
+        
        this.pokedex.push(pokemon)
       }
     });
