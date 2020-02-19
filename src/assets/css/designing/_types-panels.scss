@@ -278,6 +278,7 @@
      background-color: $color-grass-dark2;
      color:$color-white;
      font-family: $font-fam-ebold;
+     white-space:nowrap;
  }
  .grass-card-content{
     background-color: $color-grass-base;
@@ -288,6 +289,7 @@
     background-color: $color-normal-dark2;
     color:$color-white;
     font-family: $font-fam-ebold;
+    white-space:nowrap;
  }
  .normal-card-content{
     background-color: $color-normal-base;
@@ -298,6 +300,7 @@
     background-color: $color-fire-dark2;
     color:$color-white;
     font-family: $font-fam-ebold;
+    white-space:nowrap;
  }
  .fire-card-content{
     background-color: $color-fire-base;
@@ -308,6 +311,7 @@
     background-color: $color-water-dark2;
     color:$color-white;
     font-family: $font-fam-ebold;
+    white-space:nowrap;
  }
  .water-card-content{
     background-color: $color-water-base;
@@ -318,6 +322,7 @@
     background-color: $color-fighting-dark2;
     color:$color-white;
     font-family: $font-fam-ebold;
+    white-space:nowrap;
  }
  .fighting-card-content{
     background-color: $color-fighting-base;
@@ -328,6 +333,7 @@
     background-color: $color-flying-dark2;
     color:$color-white;
     font-family: $font-fam-ebold;
+    white-space:nowrap;
 }
 .flying-card-content{
     background-color: $color-flying-base;
@@ -338,6 +344,7 @@
     background-color: $color-poison-dark2;
     color:$color-white;
     font-family: $font-fam-ebold;
+    white-space:nowrap;
 }
 .poison-card-content{
     background-color: $color-poison-base;
@@ -348,6 +355,7 @@
     background-color: $color-ground-dark2;
     color:$color-white;
     font-family: $font-fam-ebold;
+    white-space:nowrap;
 }
 .ground-card-content{
     background-color: $color-ground-base;
@@ -358,6 +366,7 @@
     background-color: $color-rock-dark2;
     color:$color-white;
     font-family: $font-fam-ebold;
+    white-space:nowrap;
 }
 .rock-card-component{
     background-color: $color-rock-base;
@@ -368,6 +377,7 @@
     background-color: $color-bug-dark2;
     color:$color-white;
     font-family: $font-fam-ebold;
+    white-space:nowrap;
 }
 .bug-card-content{
     background-color: $color-bug-base;
@@ -378,6 +388,7 @@
     background-color: $color-ghost-dark2;
     color:$color-white;
     font-family: $font-fam-ebold;
+    white-space:nowrap;
 }
 .ghost-card-content{
     background-color: $color-ghost-base;
@@ -388,6 +399,7 @@
     background-color: $color-electric-dark2;
     color:$color-white;
     font-family: $font-fam-ebold;
+    white-space:nowrap;
 }
 .electric-card-content{
     background-color: $color-electric-base;
@@ -398,16 +410,19 @@
     background-color: $color-psychic-dark2;
     color:$color-white;
     font-family: $font-fam-ebold;
+    white-space:nowrap;
 }
 .psychic-card-content{
     background-color: $color-psychic-base;
     color:$color-white;
     font-family: $font-fam-reg;
+    
 }
 .ice-card{
     background-color: $color-ice-dark2;
     color:$color-white;
     font-family: $font-fam-ebold;
+    white-space:nowrap;
 }
 .ice-card-content{
     background-color: $color-ice-base;
@@ -418,6 +433,7 @@
     background-color: $color-dragon-dark2;
     color:$color-white;
     font-family: $font-fam-ebold;
+    white-space:nowrap;
 }
 .dragon-card-content{
     background-color: $color-dragon-base;
@@ -428,6 +444,7 @@
     background-color: $color-dark-dark2;
     color:$color-white;
     font-family: $font-fam-ebold;
+    white-space:nowrap;
 }
 .darl-card-content{
     background-color: $color-dark-base;
@@ -438,6 +455,7 @@
     background-color: $color-steel-dark2;
     color:$color-white;
     font-family: $font-fam-ebold;
+    white-space:nowrap;
 }
 .steel-card-content{
     background-color: $color-steel-base;
@@ -448,6 +466,7 @@
     background-color: $color-fairy-dark2;
     color:$color-white;
     font-family: $font-fam-ebold;
+    white-space:nowrap;
 }
 .fairy-card-content{
     background-color: $color-fairy-base;

@@ -91,7 +91,7 @@
         </div>
     </div>
     <div class="col-4 nopadding card">
-        <div class="card-header smallpadding text-center {{data.type.standard[0]}}-card" style="white-space:nowrap;">
+        <div class="card-header smallpadding text-center {{data.type.standard[0]}}-card">
             BASE EGG STEP
         </div>
         <div class="card-body smallpadding text-center {{data.type.standard[0]}}-card-content" >
@@ -101,7 +101,7 @@
 </div>
 <div class="row sidepadding">
     <div class="col-12 nopadding ">
-        <div class="chart-wrapper ">
+        <div class="chart-wrapper " style="position: relative; height:50vh; width:90vw">
             <canvas baseChart  
             [datasets]="barChartData" 
             [labels]="barChartLabels" 

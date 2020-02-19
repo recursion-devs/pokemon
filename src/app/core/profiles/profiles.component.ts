@@ -31,6 +31,7 @@ export class ProfilesComponent implements OnInit {
   barChartOptions: ChartOptions = 
   {
     responsive: true,
+    maintainAspectRatio:false,
     title: {
       display: true,
       text: 'WEAKNESS',
